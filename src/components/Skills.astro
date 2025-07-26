@@ -1,0 +1,65 @@
+---
+import Icon from './Icon.astro';
+---
+
+<section class="box skills glass-square">
+	<div class="stack gap-2 lg:gap-4">
+		<Icon icon="terminal-window" color="#FFD600" size="2.5rem" gradient={false} />
+		<h2>Full Stack</h2>
+		<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod.</p>
+	</div>
+	<div class="stack gap-2 lg:gap-4">
+		<Icon icon="trophy" color="#FFD600" size="2.5rem" gradient={false} />
+		<h2>Industry Leader</h2>
+		<p>Neque viverra justo nec ultrices dui. Est ultricies integer quis auctor elit.</p>
+	</div>
+	<div class="stack gap-2 lg:gap-4">
+		<Icon icon="strategy" color="#FFD600" size="2.5rem" gradient={false} />
+		<h2>Strategy-Minded</h2>
+		<p>Urna porttitor rhoncus dolor purus non enim praesent ornare.</p>
+	</div>
+</section>
+
+<style>
+	.box.glass-square {
+		border: 2px solid rgba(255,255,255,0.25);
+		border-radius: 1.25rem;
+		background: rgba(255,255,255,0.15);
+		box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);
+		backdrop-filter: blur(8px);
+		-webkit-backdrop-filter: blur(8px);
+		padding: 1.5rem;
+		transition: box-shadow 0.2s;
+	}
+
+	.skills {
+		display: flex;
+		flex-direction: column;
+		gap: 3rem;
+	}
+
+	.skills h2 {
+		font-size: var(--text-lg);
+	}
+
+	.skills p {
+		color: var(--gray-400);
+	}
+
+	@media (min-width: 50em) {
+		.box {
+			border-radius: 1.5rem;
+			padding: 2.5rem;
+		}
+
+		.skills {
+			display: grid;
+			grid-template-columns: repeat(3, 1fr);
+			gap: 5rem;
+		}
+
+		.skills h2 {
+			font-size: var(--text-2xl);
+		}
+	}
+</style>

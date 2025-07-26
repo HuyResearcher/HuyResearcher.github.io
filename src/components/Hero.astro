@@ -1,0 +1,135 @@
+---
+const personalImageAlt = "Huy Hoang"
+import Badge from "@/components/Badge.astro"
+import LinkedInIcon from "@/components/icons/LinkedIn.astro"
+import MailIcon from "@/components/icons/Mail.astro"
+import SocialPill from "@/components/SocialPill.astro"
+import DocumentIcon from "@/components/icons/Document.astro"
+import Icon from './Icon.astro'
+import Skills from "./Skills.astro";
+---
+
+<div class="flex flex-col gap-8">
+  <div class="flex items-center gap-8">
+    <div class="max-w-xl flex-1">
+      <div class="flex gap-4 mb-4">
+        <img
+          class="rounded-full shadow-lg size-16"
+          src="/midudev.webp"
+          alt={personalImageAlt}
+        />
+        <a
+          href="https://www.linkedin.com/in/huyhoang0603/"
+          target="_blank"
+          rel="noopener"
+          class="flex items-center transition md:justify-center md:hover:scale-105"
+        >
+          <Badge>Keep in touch</Badge>
+        </a>
+      </div>
+      <h1
+        class="text-4xl font-bold tracking-tight text-gray-800 sm:text-5xl dark:text-white"
+      >
+        Hey, This is Huy Hoang (also Cris)
+      </h1>
+      <p
+        class="mt-6 text-xl text-gray-800 dark:[&>strong]:text-yellow-200 [&>strong]:text-yellow-500 [&>strong]:font-semibold dark:text-gray-300"
+      >
+        +2 years of experience as <strong
+          >Business Analyst and System Administration</strong
+        > based in Ho Chi Minh City, Vietnam. I am really curious about your business canvas
+      </p>
+      <nav class="flex flex-wrap gap-4 mt-8">
+        <SocialPill href="mailto:quochuyhqh02@gmail.com">
+          <MailIcon class="size-4" />
+          Contact
+        </SocialPill>
+        <SocialPill href="https://www.linkedin.com/in/huyhoang0603/">
+          <LinkedInIcon class="size-4" />
+          LinkedIn
+        </SocialPill>
+        <SocialPill href="">
+          <DocumentIcon class="size-4" />
+          Resumé
+        </SocialPill>
+      </nav>
+    </div>
+    <!-- AI Robot image on the right -->
+    <div class="flex-shrink-0 flex items-center justify-center">
+      <img src="/AIBot.png" alt="AI Robot" style="width:440px;height:440px;object-fit:contain;" />
+    </div>
+  </div>
+
+<section class="skills-glass-box">
+  <div class="skills-row">
+    <div class="skill-item">
+      <Icon icon="terminal-window" color="#FFD600" size="2.5rem" gradient={false} />
+      <h2><strong>Full Stack</strong></h2>
+      <p>A Business Analyst that can monitor ERP system, support unit test, develop front-end site and more</p>
+    </div>
+    <div class="skill-item">
+      <Icon icon="trophy" color="#FFD600" size="2.5rem" gradient={false} />
+      <h2><strong>Project Management</strong></h2>
+      <p>Experienced in fast-paced environments, Agile is always the preferred approach for project management.</p>
+    </div>
+    <div class="skill-item">
+      <Icon icon="strategy" color="#FFD600" size="2.5rem" gradient={false} />
+      <h2><strong>Strategy-Minded</strong></h2>
+      <p>Strategy is the art of turning vision into action.</p>
+    </div>
+  </div>
+</section>
+
+<style>
+  .skills-glass-box {
+    border: 2px solid rgba(255,255,255,0.25);
+    border-radius: 1.25rem;
+    background: rgba(255,255,255,0.15);
+    box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);
+    backdrop-filter: blur(8px);
+    -webkit-backdrop-filter: blur(8px);
+    padding: 2rem;
+    margin-top: 1rem;
+    transition: box-shadow 0.2s;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  .skills-row {
+    display: flex;
+    gap: 3rem;
+    width: 100%;
+    justify-content: center;
+  }
+  .skill-item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    min-width: 180px;
+    max-width: 220px;
+    padding: 1rem;
+  }
+  .skill-item h2 {
+    font-size: var(--text-lg);
+    margin-top: 0.5rem;
+    margin-bottom: 0.5rem;
+    text-align: center;
+  }
+  .skill-item p {
+    color: var(--gray-400);
+    text-align: center;
+    font-size: 1rem;
+  }
+  @media (max-width: 900px) {
+    .skills-row {
+      flex-direction: column;
+      gap: 2rem;
+      align-items: center;
+    }
+    .skills-glass-box {
+      padding: 1rem;
+    }
+  }
+</style>
+
+</div>
