@@ -4,43 +4,87 @@ import NextJS from "./icons/NextJS.astro"
 import Tailwind from "./icons/Tailwind.astro"
 import Link from "./icons/Link.astro"
 import LinkButton from "./LinkButton.astro"
+import SAP from "./icons/SAP.astro"
+import Restful from "./icons/Restful.astro"
+import JS from "./icons/Javascript.astro"
+import Mongo from "./icons/Mongo.astro"
+import Frappe from "./icons/Frappe.astro"
 
 const TAGS = {
-  NEXT: {
-    name: "Next.js",
+  LINK: {
+    name: "Project link",
     class: "bg-black text-white",
-    icon: NextJS,
+    icon: Link,
   },
   TAILWIND: {
     name: "Tailwind CSS",
     class: "bg-[#003159] text-white",
     icon: Tailwind,
   },
+  LINK2: {
+    name: "Project link",
+    class: "bg-black text-white",
+    icon: Link,
+  },
+  SAP: {
+    name: "SAP",
+    class: "bg-[#003159] text-white",
+    icon: SAP,
+  },
+  RESTFUL: {
+    name: "RESTful API",
+    class: "bg-[#003159] text-white",
+    icon: Restful,
+  },
+  JS: {
+    name: "JavaScript",
+    class: "bg-[#003159] text-white",
+    icon: JS,
+  },
+  MONGO: {
+    name: "MongoDB",
+    class: "bg-[#003159] text-white",
+    icon: Mongo,
+  },
+  FRAPPE: {
+    name: "Frappe",
+    class: "bg-[#003159] text-white",
+    icon: Frappe,
+  },
 }
 const PROJECTS = [
   {
-    title: "SAP - Integration Suite",
+    title: "SAP - SD & Integration Suite",
     description:
       "In the SAP project at Orion Food Vina, one of the largest confectionery manufacturers in South Korea and Vietnam, I served as a Business Analyst in the Sales & Distribution (SD) division. My role involved acting as a liaison and analyzing business processes, along with managing APIs between relevant systems, including the PDA for sales personnel, SAP SD, and the logistics system. Utilizing my expertise in SD, project management, BACCM, and API, I led a team of developers from both Korea and Vietnam.",
-    link: "https://svgl.vercel.app/",
-    github: "https://github.com/pheralb/svgl",
+    link: "https://www.mk.co.kr/en/it/10963955",
+    github: "https://www.dmspro.vn/orion-khoi-dong-du-an-chuyen-doi-so-cung-dmspro-buoc-tien-chien-luoc-trong-hieu-qua-kinh-doanh#:~:text=DMSpro%20cung%20c%E1%BA%A5p%20m%E1%BB%99t%20gi%E1%BA%A3i,h%C6%A1n%20ngay%20t%E1%BA%A1i%20c%E1%BB%ADa%20h%C3%A0ng",
     image: "/projects/SAP.png",
-    tags: [TAGS.NEXT, TAGS.TAILWIND],
+    tags: [TAGS.SAP, TAGS.RESTFUL],
   },
   {
     title: "MHM - Shop Heat Map",
     description:
-      "Plataforma gratuita con retos de programación. Más de 1 millón de visitas en un mes. +50K retos completados. Creada desde cero con Next.js, React y Tailwind CSS.",
-    link: "https://adventjs.dev",
-    image: "/projects/adventjs.webp",
-    tags: [TAGS.NEXT, TAGS.TAILWIND],
+      "A geographical heat map application that allows users to visualize and analyze data related to shop locations that selling Milk of Orion Food Vina. The app provides a user-friendly interface for displaying shop data on a map, enabling users to identify trends and patterns in shop distribution.",
+    link2: "https://mhm.orionvina.vn/login/index.html",
+    image: "/projects/MHM.png",
+    tags: [TAGS.JS, TAGS.MONGO],
   },
+  {
+    title: "DraEdu - EduTech System",
+    description:
+      "An innovative EduTech system designed to enhance the learning experience for students and educators. The platform offers a variety of tools and resources for online learning, including interactive lessons, assessments, and progress tracking.",
+    link3: "https://draedu.vn/home",
+    image: "/projects/Draedu.png",
+    tags: [TAGS.FRAPPE],
+  },
+
 ]
 ---
 
 <div class="flex flex-col gap-y-16">
   {
-    PROJECTS.map(({ image, title, description, tags, link, github }) => (
+    PROJECTS.map(({ image, title, description, tags, link, github, link2, link3 }) => (
     <article class="flex flex-col space-x-0 space-y-8 group md:flex-row md:space-x-8 md:space-y-0">
   <div class="w-full md:w-1/2">
     <div class="relative flex flex-col items-center col-span-6 row-span-5 gap-8 transition duration-500 ease-in-out transform shadow-xl overflow-clip rounded-xl sm:rounded-xl md:group-hover:-translate-y-1 md:group-hover:shadow-2xl lg:border lg:border-gray-800 lg:hover:border-gray-700 lg:hover:bg-gray-800/50">
@@ -69,16 +113,28 @@ const PROJECTS = [
       <div class="mt-2 text-gray-700 dark:text-gray-400">{description}</div>
       <footer class="flex items-end justify-start mt-4 gap-x-4">
           {github && (
-            <LinkButton href={github}>
-              <GitHub class="size-6" />
-              Code
+            <LinkButton href="https://www.mk.co.kr/en/it/10963955">
+              <Link class="size-4" />
+              Metanet Global
               
             </LinkButton>
           )}
           {link && (
-            <LinkButton href={link}>
+            <LinkButton href="https://www.dmspro.vn/orion-khoi-dong-du-an-chuyen-doi-so-cung-dmspro-buoc-tien-chien-luoc-trong-hieu-qua-kinh-doanh#:~:text=DMSpro%20cung%20c%E1%BA%A5p%20m%E1%BB%99t%20gi%E1%BA%A3i,h%C6%A1n%20ngay%20t%E1%BA%A1i%20c%E1%BB%ADa%20h%C3%A0ng.">
               <Link class="size-4" />
-              Preview
+              DMSPRO
+            </LinkButton>
+          )}
+          {link2 && (
+            <LinkButton href="https://mhm.orionvina.vn/login/index.html">
+              <Link class="size-4" />
+              MHM
+            </LinkButton>
+          )}
+          {link3 && (
+            <LinkButton href="https://draedu.vn/home">
+              <Link class="size-4" />
+              DraEdu
             </LinkButton>
           )}
         </footer>
@@ -88,6 +144,5 @@ const PROJECTS = [
     ))
   }
 </div>
-
 
 
