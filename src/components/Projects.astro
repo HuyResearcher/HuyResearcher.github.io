@@ -9,6 +9,10 @@ import Restful from "./icons/Restful.astro"
 import JS from "./icons/Javascript.astro"
 import Mongo from "./icons/Mongo.astro"
 import Frappe from "./icons/Frappe.astro"
+import Jira from "./icons/Jira.astro"
+import Figma from "./icons/Figma.astro"
+import PowerBI from "./icons/PowerBI.astro"
+import DrawIO from "./icons/DrawIO.astro"
 
 const TAGS = {
   LINK: {
@@ -51,32 +55,67 @@ const TAGS = {
     class: "bg-[#003159] text-white",
     icon: Frappe,
   },
+  JIRA: {
+    name: "Jira",
+    class: "bg-[#003159] text-white",
+    icon: Jira,
+  },
+  FIGMA: {
+    name: "Figma",
+    class: "bg-[#003159] text-white",
+    icon: Figma,
+  },
+  POWERBI: {
+    name: "Power BI",
+    class: "bg-[#003159] text-white",
+    icon: PowerBI,
+  },
+  DRAWIO: {
+    name: "Draw.io",
+    class: "bg-[#003159] text-white",
+    icon: DrawIO,
+  },
 }
 const PROJECTS = [
   {
     title: "SAP - SD & Integration Suite",
-    description:
-      "In the SAP project at Orion Food Vina, one of the largest confectionery manufacturers in South Korea and Vietnam, I served as a Business Analyst in the Sales & Distribution (SD) division. My role involved acting as a liaison and analyzing business processes, along with managing APIs between relevant systems, including the PDA for sales personnel, SAP SD, and the logistics system. Utilizing my expertise in SD, project management, BACCM, and API, I led a team of developers from both Korea and Vietnam.",
+    description: [
+      { label: "Project timeline", value: "From September 2024 (in developement)" },
+      { label: "Project overview", value: "SAP system at Orion Food Vina, one of the largest confectionery manufacturers in South Korea and Vietnam" },
+      { label: "Project team size", value: "SAP - 200, Portal Website - 50, Logistic System - 10, Invoice system - 10" },
+      { label: "Role", value: "Business Analyst in the Sales & Distribution (SD) division" },
+      { label: "Task", value: "Acting as a liaison and analyzing business processes, along with managing APIs between relevant systems, including the PDA for sales personnel, SAP SD, and the logistics system." }
+    ],
     link: "https://www.mk.co.kr/en/it/10963955",
-    github: "https://www.dmspro.vn/orion-khoi-dong-du-an-chuyen-doi-so-cung-dmspro-buoc-tien-chien-luoc-trong-hieu-qua-kinh-doanh#:~:text=DMSpro%20cung%20c%E1%BA%A5p%20m%E1%BB%99t%20gi%E1%BA%A3i,h%C6%A1n%20ngay%20t%E1%BA%A1i%20c%E1%BB%ADa%20h%C3%A0ng",
+    github: "https://www.dmspro.vn/orion-khoi-dong-du-an-chuyen-doi-so-cung-dmspro-buoc-tien-chien-luoc-trong-hieu-qua-kinh-doanh#:~:text=DMSpro%20cung%20c%E1%BA%A5p%20m%E1%BB%96t%20gi%E1%BA%A3i,h%C6%A1n%20ngay%20t%E1%BA%A1i%20c%E1%BB%ADa%20h%C3%A0ng",
     image: "/projects/SAP.png",
-    tags: [TAGS.SAP, TAGS.RESTFUL],
+    tags: [TAGS.SAP, TAGS.RESTFUL, TAGS.JIRA, TAGS.FIGMA, TAGS.DRAWIO],
   },
   {
     title: "MHM - Shop Heat Map",
-    description:
-      "A geographical heat map application that allows users to visualize and analyze data related to shop locations that selling Milk of Orion Food Vina. The app provides a user-friendly interface for displaying shop data on a map, enabling users to identify trends and patterns in shop distribution.",
+    description: [
+      { label: "Project timeline", value: "August 2024 - November 2024" },
+      { label: "Project overview", value: "A geographical heat map application that allows users to visualize and analyze data related to shop locations that selling Milk of Orion Food Vina." },
+      { label: "Team size", value: "5" },
+      { label: "Role", value: "Business Analyst cum Tester" },
+      { label: "Task", value: "Analyze user requirement, data validation & cleaning, UI UX design." }
+    ],
     link2: "https://mhm.orionvina.vn/login/index.html",
     image: "/projects/MHM.png",
-    tags: [TAGS.JS, TAGS.MONGO],
+    tags: [TAGS.JS, TAGS.MONGO, TAGS.POWERBI, TAGS.DRAWIO],
   },
   {
     title: "DraEdu - EduTech System",
-    description:
-      "An innovative EduTech system designed to enhance the learning experience for students and educators. The platform offers a variety of tools and resources for online learning, including interactive lessons, assessments, and progress tracking.",
+    description: [
+      { label: "Project timeline", value: "August 2023 - October 2024" },
+      { label: "Project overview", value: "An innovative EduTech system designed to enhance the learning experience for students and educators. The platform offers a variety of tools and resources for online learning, including interactive lessons, assessments, and progress tracking." },
+      { label: "Team size", value: "6" },
+      { label: "Role", value: "Business Analyst cum UI/UX Designer" },
+      { label: "Task", value: "Analyze user requirement, unit test, UI UX design." }
+    ],
     link3: "https://draedu.vn/home",
     image: "/projects/Draedu.png",
-    tags: [TAGS.FRAPPE],
+    tags: [TAGS.FRAPPE, TAGS.FIGMA, TAGS.DRAWIO],
   },
 
 ]
@@ -110,7 +149,15 @@ const PROJECTS = [
           ))}
         </ul>
 
-      <div class="mt-2 text-gray-700 dark:text-gray-400">{description}</div>
+      <div class="mt-2 text-gray-700 dark:text-gray-400">
+        {Array.isArray(description) ? (
+          <ul class="list-disc pl-4">
+            {description.map(item => (
+              <li><strong>{item.label}:</strong> {item.value}</li>
+            ))}
+          </ul>
+        ) : description}
+      </div>
       <footer class="flex items-end justify-start mt-4 gap-x-4">
           {github && (
             <LinkButton href="https://www.mk.co.kr/en/it/10963955">
@@ -120,7 +167,7 @@ const PROJECTS = [
             </LinkButton>
           )}
           {link && (
-            <LinkButton href="https://www.dmspro.vn/orion-khoi-dong-du-an-chuyen-doi-so-cung-dmspro-buoc-tien-chien-luoc-trong-hieu-qua-kinh-doanh#:~:text=DMSpro%20cung%20c%E1%BA%A5p%20m%E1%BB%99t%20gi%E1%BA%A3i,h%C6%A1n%20ngay%20t%E1%BA%A1i%20c%E1%BB%ADa%20h%C3%A0ng.">
+            <LinkButton href="https://www.dmspro.vn/orion-khoi-dong-du-an-chuyen-doi-so-cung-dmspro-buoc-tien-chien-luoc-trong-hieu-qua-kinh-doanh#:~:text=DMSpro%20cung%20c%E1%BA%A5p%20m%E1%BB%96t%20gi%E1%BA%A3i,h%C6%A1n%20ngay%20t%E1%BA%A1i%20c%E1%BB%ADa%20h%C3%A0ng.">
               <Link class="size-4" />
               DMSPRO
             </LinkButton>
