@@ -50,6 +50,44 @@ import TitleSection from "@/components/TitleSection.astro"
         </TitleSection>
         <Projects />
       </SectionContainer>
+      <!-- Music Bubble -->
+      <div id="music-bubble" style="position: fixed; bottom: 32px; right: 32px; z-index: 50;">
+        <button id="music-bubble-btn" style="background: #fff; border-radius: 50%; box-shadow: 0 2px 8px rgba(0,0,0,0.15); width: 56px; height: 56px; display: flex; align-items: center; justify-content: center; border: none; cursor: pointer;">
+          <span style="font-size: 2rem;">🎵</span>
+        </button>
+        <div id="music-bubble-player" style="visibility: hidden; opacity: 0; position: absolute; bottom: 70px; right: 0; transition: opacity 0.3s; width: 400px;">
+          <iframe
+            data-testid="embed-iframe"
+            style="border-radius:12px; width:400px; height:152px;"
+            src="https://open.spotify.com/embed/album/7pcBXbl1g198PNAxt44bHQ?utm_source=generator&theme=0"
+            frameborder="0"
+            allowfullscreen=""
+            allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture"
+            loading="lazy"
+          ></iframe>
+        </div>
+      </div>
+      <script>
+        if (typeof window !== 'undefined') {
+          window.addEventListener('DOMContentLoaded', () => {
+            const btn = document.getElementById('music-bubble-btn');
+            const player = document.getElementById('music-bubble-player');
+            let visible = false;
+            if (btn && player) {
+              btn.addEventListener('click', () => {
+                visible = !visible;
+                if (visible) {
+                  player.style.visibility = 'visible';
+                  player.style.opacity = '1';
+                } else {
+                  player.style.visibility = 'hidden';
+                  player.style.opacity = '0';
+                }
+              });
+            }
+          });
+        }
+      </script>
     </div>
   </main>
 </Layout>
