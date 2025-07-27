@@ -4,7 +4,7 @@ import tailwind from "@astrojs/tailwind"
 import robotsTxt from "astro-robots-txt"
 const SERVER_PORT = 3000
 const LOCALHOST_URL = `http://localhost:${SERVER_PORT}`
-const LIVE_URL = `https://quochuyba.github.io`
+const LIVE_URL = `https://HuyResearcher.github.io`
 const SCRIPT = process.env.npm_lifecycle_script || "";
 const isBuilt = SCRIPT.includes("astro build");
 let BASE_URL = LOCALHOST_URL; 
