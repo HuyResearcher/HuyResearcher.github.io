@@ -202,35 +202,5 @@ const ALL_SKILLS = Object.values(SKILLS).flat()
     transform: translateY(-2px);
   }
 
-  /* Fade effect on edges */
-  .skills-display::before,
-  .skills-display::after {
-    content: '';
-    position: absolute;
-    top: 0;
-    bottom: 0;
-    width: 50px;
-    z-index: 10;
-    pointer-events: none;
-  }
 
-  .skills-display::before {
-    left: 0;
-    background: linear-gradient(to right, rgba(239, 246, 255, 1), rgba(239, 246, 255, 0));
-  }
-
-  .skills-display::after {
-    right: 0;
-    background: linear-gradient(to left, rgba(239, 246, 255, 1), rgba(239, 246, 255, 0));
-  }
-
-  @media (prefers-color-scheme: dark) {
-    .skills-display::before {
-      background: linear-gradient(to right, rgba(17, 24, 39, 1), rgba(17, 24, 39, 0));
-    }
-
-    .skills-display::after {
-      background: linear-gradient(to left, rgba(17, 24, 39, 1), rgba(17, 24, 39, 0));
-    }
-  }
 </style>
