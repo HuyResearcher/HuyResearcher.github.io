@@ -7,9 +7,11 @@ import CodeIcon from "@/components/icons/Code.astro"
 import Experience from "@/components/Experience.astro"
 import ProfileCheck from "@/components/icons/ProfileCheck.astro"
 import Projects from "@/components/Projects.astro"
+import Skills from "@/components/Skills.astro"
 import SectionContainer from "@/components/SectionContainer.astro"
 import Hero from "@/components/Hero.astro"
 import TitleSection from "@/components/TitleSection.astro"
+import System from "@/components/icons/System.astro"
 ---
 
 <Layout
@@ -41,6 +43,14 @@ import TitleSection from "@/components/TitleSection.astro"
           Experience
         </TitleSection>
         <Experience />
+      </SectionContainer>
+
+      <SectionContainer id="Skills">
+        <TitleSection>
+          <System class="size-8" />
+          Skills
+        </TitleSection>
+        <Skills />
       </SectionContainer>
 
       <SectionContainer id="Project">

@@ -1,65 +1,234 @@
 ---
-import Icon from './Icon.astro';
+import GitHub from "./icons/GitHub.astro"
+import NextJS from "./icons/NextJS.astro"
+import Tailwind from "./icons/Tailwind.astro"
+import Link from "./icons/Link.astro"
+import SAP from "./icons/SAP.astro"
+import Restful from "./icons/Restful.astro"
+import JS from "./icons/Javascript.astro"
+import Mongo from "./icons/Mongo.astro"
+import Frappe from "./icons/Frappe.astro"
+import Python from "./icons/Python.astro"
+import SQL from "./icons/SQL.astro"
+import PowerBI from "./icons/PowerBI.astro"
+import CSS from "./icons/CSS.astro"
+import HTML from "./icons/HTML.astro"
+import Figma from "./icons/Figma.astro"
+import DrawIO from "./icons/DrawIO.astro"
+import AIPrompt from "./icons/AIPrompt.astro"
+import AIAgentFlow from "./icons/AIAgentFlow.astro"
+import UML from "./icons/UML.astro"
+
+const SKILLS = {
+  "Business Analysis": [
+    { name: "Business Process Analysis", icon: SAP, category: "Business Analysis" },
+    { name: "UML", icon: UML, category: "Business Analysis" },
+    { name: "Figma", icon: Figma, category: "Business Analysis" },
+    { name: "Draw.io", icon: DrawIO, category: "Business Analysis" }
+  ],
+  "Data Analysis": [
+    { name: "SQL", icon: SQL, category: "Data Analysis" },
+    { name: "Power BI", icon: PowerBI, category: "Data Analysis" },
+    { name: "MongoDB", icon: Mongo, category: "Data Analysis" }
+  ],
+  "Language": [
+    { name: "English", icon: GitHub, category: "Language" },
+    { name: "Vietnamese", icon: GitHub, category: "Language" },
+    { name: "CSS", icon: CSS, category: "Language" },
+    { name: "Python", icon: Python, category: "Language" },
+    { name: "Tailwind", icon: Tailwind, category: "Language" },
+    { name: "JavaScript", icon: JS, category: "Language" }
+  ],
+  "AI": [
+    { name: "AI Agent", icon: AIAgentFlow, category: "AI" },
+    { name: "AI Prompt", icon: AIPrompt, category: "AI" }
+  ]
+} as const
+
+const ALL_SKILLS = Object.values(SKILLS).flat()
 ---
 
-<section class="box skills glass-square">
-	<div class="stack gap-2 lg:gap-4">
-		<Icon icon="terminal-window" color="#FFD600" size="2.5rem" gradient={false} />
-		<h2>Full Stack</h2>
-		<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod.</p>
-	</div>
-	<div class="stack gap-2 lg:gap-4">
-		<Icon icon="trophy" color="#FFD600" size="2.5rem" gradient={false} />
-		<h2>Industry Leader</h2>
-		<p>Neque viverra justo nec ultrices dui. Est ultricies integer quis auctor elit.</p>
-	</div>
-	<div class="stack gap-2 lg:gap-4">
-		<Icon icon="strategy" color="#FFD600" size="2.5rem" gradient={false} />
-		<h2>Strategy-Minded</h2>
-		<p>Urna porttitor rhoncus dolor purus non enim praesent ornare.</p>
-	</div>
-</section>
+<div class="skills-container">
+  <!-- Filter Buttons -->
+  <div class="flex flex-wrap gap-4 mb-8 justify-center">
+    <button 
+      class="filter-btn px-6 py-3 rounded-full bg-gradient-to-r from-gray-100 to-gray-200 dark:from-gray-700 dark:to-gray-600 text-gray-700 dark:text-gray-300 hover:from-blue-500 hover:to-purple-500 hover:text-white transition-all duration-300 font-medium shadow-md hover:shadow-lg transform hover:scale-105"
+      data-filter="Business Analysis"
+    >
+      📊 Business Analysis
+    </button>
+    <button 
+      class="filter-btn px-6 py-3 rounded-full bg-gradient-to-r from-gray-100 to-gray-200 dark:from-gray-700 dark:to-gray-600 text-gray-700 dark:text-gray-300 hover:from-blue-500 hover:to-purple-500 hover:text-white transition-all duration-300 font-medium shadow-md hover:shadow-lg transform hover:scale-105"
+      data-filter="Data Analysis"
+    >
+      📈 Data Analysis
+    </button>
+    <button 
+      class="filter-btn px-6 py-3 rounded-full bg-gradient-to-r from-gray-100 to-gray-200 dark:from-gray-700 dark:to-gray-600 text-gray-700 dark:text-gray-300 hover:from-blue-500 hover:to-purple-500 hover:text-white transition-all duration-300 font-medium shadow-md hover:shadow-lg transform hover:scale-105"
+      data-filter="AI"
+    >
+      🤖 AI
+    </button>
+    <button 
+      class="filter-btn px-6 py-3 rounded-full bg-gradient-to-r from-gray-100 to-gray-200 dark:from-gray-700 dark:to-gray-600 text-gray-700 dark:text-gray-300 hover:from-blue-500 hover:to-purple-500 hover:text-white transition-all duration-300 font-medium shadow-md hover:shadow-lg transform hover:scale-105"
+      data-filter="Language"
+    >
+      🌐 Language
+    </button>
+  </div>
+
+  <!-- Skills Display -->
+  <div class="skills-display overflow-hidden bg-gradient-to-r from-blue-50 to-purple-50 dark:from-gray-900 dark:to-gray-800 rounded-2xl p-6">
+    <div class="skills-flow flex gap-6 animate-scroll">
+      {ALL_SKILLS.map((skill) => (
+        <div class="skill-item flex items-center gap-3 px-6 py-3 bg-white dark:bg-gray-800 rounded-xl shadow-lg hover:shadow-xl border border-gray-200 dark:border-gray-700 whitespace-nowrap flex-shrink-0 transition-all duration-300 hover:scale-105" data-category={skill.category}>
+          <skill.icon class="size-8" />
+          <span class="text-base font-semibold text-gray-800 dark:text-gray-200">{skill.name}</span>
+        </div>
+      ))}
+      {/* Duplicate for continuous scroll */}
+      {ALL_SKILLS.map((skill) => (
+        <div class="skill-item flex items-center gap-3 px-6 py-3 bg-white dark:bg-gray-800 rounded-xl shadow-lg hover:shadow-xl border border-gray-200 dark:border-gray-700 whitespace-nowrap flex-shrink-0 transition-all duration-300 hover:scale-105" data-category={skill.category}>
+          <skill.icon class="size-8" />
+          <span class="text-base font-semibold text-gray-800 dark:text-gray-200">{skill.name}</span>
+        </div>
+      ))}
+    </div>
+  </div>
+</div>
+
+<script>
+  document.addEventListener('DOMContentLoaded', () => {
+    const filterBtns = document.querySelectorAll<HTMLButtonElement>('.filter-btn');
+    const skillItems = document.querySelectorAll<HTMLElement>('.skill-item');
+    const skillsFlow = document.querySelector<HTMLElement>('.skills-flow');
+    let activeFilter: string | null = null;
+
+    filterBtns.forEach(btn => {
+      btn.addEventListener('click', (e) => {
+        const target = e.target as HTMLButtonElement;
+        const filter = target.dataset.filter;
+        
+        if (!filter) return;
+        
+        // Toggle active state
+        if (activeFilter === filter) {
+          // Unselect current filter
+          activeFilter = null;
+          btn.classList.remove('from-blue-500', 'to-purple-500', 'text-white');
+          btn.classList.add('from-gray-100', 'to-gray-200', 'dark:from-gray-700', 'dark:to-gray-600', 'text-gray-700', 'dark:text-gray-300');
+          showAllSkills();
+        } else {
+          // Remove active state from all buttons
+          filterBtns.forEach(b => {
+            b.classList.remove('from-blue-500', 'to-purple-500', 'text-white');
+            b.classList.add('from-gray-100', 'to-gray-200', 'dark:from-gray-700', 'dark:to-gray-600', 'text-gray-700', 'dark:text-gray-300');
+          });
+          
+          // Set new active filter
+          activeFilter = filter;
+          btn.classList.add('from-blue-500', 'to-purple-500', 'text-white');
+          btn.classList.remove('from-gray-100', 'to-gray-200', 'dark:from-gray-700', 'dark:to-gray-600', 'text-gray-700', 'dark:text-gray-300');
+          
+          showFilteredSkills(filter);
+        }
+      });
+    });
+
+    function showAllSkills() {
+      if (skillsFlow) {
+        skillsFlow.style.animation = 'scrollLeft 25s linear infinite';
+      }
+      skillItems.forEach(item => {
+        item.style.display = 'flex';
+      });
+    }
+
+    function showFilteredSkills(category: string) {
+      if (skillsFlow) {
+        // Keep animation running for filtered skills
+        skillsFlow.style.animation = 'scrollLeft 20s linear infinite';
+      }
+      skillItems.forEach(item => {
+        if (item.dataset.category === category) {
+          item.style.display = 'flex';
+        } else {
+          item.style.display = 'none';
+        }
+      });
+    }
+
+    // Initialize with all skills showing
+    showAllSkills();
+  });
+</script>
 
 <style>
-	.box.glass-square {
-		border: 2px solid rgba(255,255,255,0.25);
-		border-radius: 1.25rem;
-		background: rgba(255,255,255,0.15);
-		box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);
-		backdrop-filter: blur(8px);
-		-webkit-backdrop-filter: blur(8px);
-		padding: 1.5rem;
-		transition: box-shadow 0.2s;
-	}
+  @keyframes scrollLeft {
+    0% {
+      transform: translateX(0);
+    }
+    100% {
+      transform: translateX(-50%);
+    }
+  }
 
-	.skills {
-		display: flex;
-		flex-direction: column;
-		gap: 3rem;
-	}
+  .animate-scroll {
+    animation: scrollLeft 25s linear infinite;
+  }
 
-	.skills h2 {
-		font-size: var(--text-lg);
-	}
+  .skills-display {
+    height: 120px;
+    display: flex;
+    align-items: center;
+    position: relative;
+    overflow: hidden;
+  }
 
-	.skills p {
-		color: var(--gray-400);
-	}
+  .skills-flow {
+    display: flex;
+    gap: 1.5rem;
+    align-items: center;
+    will-change: transform;
+  }
 
-	@media (min-width: 50em) {
-		.box {
-			border-radius: 1.5rem;
-			padding: 2.5rem;
-		}
+  .skills-container {
+    padding: 1rem 0;
+  }
 
-		.skills {
-			display: grid;
-			grid-template-columns: repeat(3, 1fr);
-			gap: 5rem;
-		}
+  .skill-item:hover {
+    transform: translateY(-2px);
+  }
 
-		.skills h2 {
-			font-size: var(--text-2xl);
-		}
-	}
+  /* Fade effect on edges */
+  .skills-display::before,
+  .skills-display::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    width: 50px;
+    z-index: 10;
+    pointer-events: none;
+  }
+
+  .skills-display::before {
+    left: 0;
+    background: linear-gradient(to right, rgba(239, 246, 255, 1), rgba(239, 246, 255, 0));
+  }
+
+  .skills-display::after {
+    right: 0;
+    background: linear-gradient(to left, rgba(239, 246, 255, 1), rgba(239, 246, 255, 0));
+  }
+
+  @media (prefers-color-scheme: dark) {
+    .skills-display::before {
+      background: linear-gradient(to right, rgba(17, 24, 39, 1), rgba(17, 24, 39, 0));
+    }
+
+    .skills-display::after {
+      background: linear-gradient(to left, rgba(17, 24, 39, 1), rgba(17, 24, 39, 0));
+    }
+  }
 </style>
