@@ -1,0 +1,111 @@
+---
+const faqs = [
+  {
+    id: 1,
+    question: "Where does Huy come from?",
+    answer: "I was born in Hue City, Vietnam, and I am currently studying and working in Ho Chi Minh City, Vietnam."
+  },
+  {
+    id: 2,
+    question: "What can Huy offer you?",
+    answer: "Huy offers you a motivated team member, detailed analysis writing, and a reliable friend you can count on."
+  },
+  {
+    id: 3,
+    question: "When can he work with you?",
+    answer: "I can start working with you approximately 2 weeks after the final offer is confirmed."
+  }
+]
+---
+
+<div class="faq-container max-w-4xl mx-auto">
+  <div class="space-y-6">
+    {faqs.map((faq) => (
+      <div class="faq-item bg-gradient-to-r from-gray-50 to-gray-100 dark:from-gray-800 dark:to-gray-700 rounded-2xl overflow-hidden hover:shadow-lg transition-all duration-300">
+        <button 
+          class="faq-question w-full text-left p-6 hover:bg-white/50 dark:hover:bg-gray-600/30 transition-colors duration-200 flex items-center justify-between group"
+          data-faq={faq.id}
+        >
+          <span class="text-lg font-semibold text-gray-800 dark:text-gray-200 group-hover:text-blue-600 dark:group-hover:text-blue-400">
+            {faq.question}
+          </span>
+          <svg 
+            class="faq-chevron size-6 text-gray-500 dark:text-gray-400 transform transition-transform duration-300 group-hover:text-blue-600 dark:group-hover:text-blue-400"
+            fill="none" 
+            stroke="currentColor" 
+            viewBox="0 0 24 24"
+          >
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
+          </svg>
+        </button>
+        <div 
+          class="faq-answer overflow-hidden transition-all duration-300 ease-in-out max-h-0"
+          data-answer={faq.id}
+        >
+          <div class="p-6 pt-2 text-gray-600 dark:text-gray-300 leading-relaxed bg-white/30 dark:bg-gray-900/20">
+            {faq.answer}
+          </div>
+        </div>
+      </div>
+    ))}
+  </div>
+</div>
+
+<script>
+  document.addEventListener('DOMContentLoaded', () => {
+    const faqQuestions = document.querySelectorAll<HTMLButtonElement>('.faq-question');
+    
+    faqQuestions.forEach(question => {
+      question.addEventListener('click', () => {
+        const faqId = question.dataset.faq;
+        const answer = document.querySelector(`[data-answer="${faqId}"]`) as HTMLElement;
+        const chevron = question.querySelector('.faq-chevron') as HTMLElement;
+        
+        if (!answer || !chevron) return;
+        
+        const isOpen = answer.style.maxHeight !== '0px' && answer.style.maxHeight !== '';
+        
+        // Close all other FAQs
+        document.querySelectorAll('.faq-answer').forEach(otherAnswer => {
+          const otherElement = otherAnswer as HTMLElement;
+          otherElement.style.maxHeight = '0px';
+        });
+        
+        document.querySelectorAll('.faq-chevron').forEach(otherChevron => {
+          const otherElement = otherChevron as HTMLElement;
+          otherElement.style.transform = 'rotate(0deg)';
+        });
+        
+        // Toggle current FAQ
+        if (!isOpen) {
+          answer.style.maxHeight = answer.scrollHeight + 'px';
+          chevron.style.transform = 'rotate(180deg)';
+        } else {
+          answer.style.maxHeight = '0px';
+          chevron.style.transform = 'rotate(0deg)';
+        }
+      });
+    });
+  });
+</script>
+
+<style>
+  .faq-container {
+    padding: 1rem 0;
+  }
+  
+  .faq-answer {
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.3s ease-in-out;
+  }
+
+  .faq-item {
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+  }
+
+  .faq-item:hover {
+    transform: translateY(-2px);
+  }
+</style>

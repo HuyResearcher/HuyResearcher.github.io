@@ -8,10 +8,14 @@ import Experience from "@/components/Experience.astro"
 import ProfileCheck from "@/components/icons/ProfileCheck.astro"
 import Projects from "@/components/Projects.astro"
 import Skills from "@/components/Skills.astro"
+import Contact from "@/components/Contact.astro"
+import FAQ from "@/components/FAQ.astro"
 import SectionContainer from "@/components/SectionContainer.astro"
 import Hero from "@/components/Hero.astro"
 import TitleSection from "@/components/TitleSection.astro"
 import System from "@/components/icons/System.astro"
+import Mail from "@/components/icons/Mail.astro"
+import Document from "@/components/icons/Document.astro"
 ---
 
 <Layout
@@ -59,6 +63,22 @@ import System from "@/components/icons/System.astro"
           Project
         </TitleSection>
         <Projects />
+      </SectionContainer>
+
+      <SectionContainer id="Contact">
+        <TitleSection>
+          <Mail class="size-8" />
+          Contact
+        </TitleSection>
+        <Contact />
+      </SectionContainer>
+
+      <SectionContainer id="FAQ">
+        <TitleSection>
+          <Document class="size-8" />
+          FAQ
+        </TitleSection>
+        <FAQ />
       </SectionContainer>
       <!-- Music Bubble -->
       <div id="music-bubble" style="position: fixed; bottom: 32px; right: 32px; z-index: 50;">
