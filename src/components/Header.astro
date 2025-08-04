@@ -16,6 +16,25 @@ const navItems = [
     title: "Project",
     label: "project",
     url: "/#Project",
+    hasDropdown: true,
+    dropdownItems: [
+      {
+        title: "SAP - SD & Integration",
+        url: "/projects/sap",
+      },
+      {
+        title: "MHM - Heat Map",
+        url: "/projects/heatmap",
+      },
+      {
+        title: "DraEdu - EduTech",
+        url: "/projects/edutech",
+      },
+      {
+        title: "All Projects",
+        url: "/#Project",
+      },
+    ]
   },
   {
     title: "Contact",
@@ -29,17 +48,42 @@ const navItems = [
   class="fixed top-0 z-10 flex items-center justify-center w-full mx-auto mt-2"
 >
   <nav
-    class="flex px-3 text-sm font-medium rounded-full text-gray-600 dark:text-gray-200 justify-center items-center"
+    class="flex px-3 text-sm font-medium rounded-full text-gray-600 dark:text-gray-200 justify-center items-center relative"
   >
     {
       navItems.map((link) => (
-        <a
-          class="relative block px-2 py-2 transition hover:text-blue-500 dark:hover:text-blue-500"
-          aria-label={link.label}
-          href={link.url}
-        >
-          {link.title}
-        </a>
+        link.hasDropdown ? (
+          <div class="relative dropdown-container">
+            <button
+              class="relative block px-2 py-2 transition hover:text-blue-500 dark:hover:text-blue-500 dropdown-trigger"
+              aria-label={link.label}
+              data-dropdown={link.label}
+            >
+              {link.title}
+              <svg class="w-3 h-3 ml-1 inline-block" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
+              </svg>
+            </button>
+            <div class="dropdown-menu absolute top-full left-0 mt-1 bg-white dark:bg-gray-800 rounded-lg shadow-xl border border-gray-200 dark:border-gray-700 min-w-48 opacity-0 invisible transition-all duration-200 transform translate-y-2">
+              {link.dropdownItems?.map((dropdownItem) => (
+                <a
+                  href={dropdownItem.url}
+                  class="block px-4 py-2 text-gray-700 dark:text-gray-300 hover:bg-gray-100 dark:hover:bg-gray-700 hover:text-blue-500 dark:hover:text-blue-400 first:rounded-t-lg last:rounded-b-lg transition-colors"
+                >
+                  {dropdownItem.title}
+                </a>
+              ))}
+            </div>
+          </div>
+        ) : (
+          <a
+            class="relative block px-2 py-2 transition hover:text-blue-500 dark:hover:text-blue-500"
+            aria-label={link.label}
+            href={link.url}
+          >
+            {link.title}
+          </a>
+        )
       ))
     }
     <ThemeToggle />
@@ -73,6 +117,54 @@ const navItems = [
 
     sections.forEach((section) => {
       observer.observe(section)
+    })
+
+    // Dropdown functionality
+    const dropdownTriggers = document.querySelectorAll('.dropdown-trigger')
+    const dropdownMenus = document.querySelectorAll('.dropdown-menu')
+    
+    dropdownTriggers.forEach((trigger, index) => {
+      const menu = dropdownMenus[index]
+      let timeoutId: number
+      
+      if (trigger && menu) {
+        // Show dropdown on hover
+        trigger.addEventListener('mouseenter', () => {
+          clearTimeout(timeoutId)
+          menu.classList.remove('opacity-0', 'invisible', 'translate-y-2')
+          menu.classList.add('opacity-100', 'visible', 'translate-y-0')
+        })
+        
+        // Hide dropdown when leaving trigger
+        trigger.addEventListener('mouseleave', () => {
+          timeoutId = setTimeout(() => {
+            menu.classList.remove('opacity-100', 'visible', 'translate-y-0')
+            menu.classList.add('opacity-0', 'invisible', 'translate-y-2')
+          }, 150)
+        })
+        
+        // Keep dropdown open when hovering over menu
+        menu.addEventListener('mouseenter', () => {
+          clearTimeout(timeoutId)
+        })
+        
+        // Hide dropdown when leaving menu
+        menu.addEventListener('mouseleave', () => {
+          menu.classList.remove('opacity-100', 'visible', 'translate-y-0')
+          menu.classList.add('opacity-0', 'invisible', 'translate-y-2')
+        })
+      }
+    })
+
+    // Close dropdowns when clicking outside
+    document.addEventListener('click', (e) => {
+      const target = e.target as Element
+      if (!target.closest('.dropdown-container')) {
+        dropdownMenus.forEach(menu => {
+          menu.classList.remove('opacity-100', 'visible', 'translate-y-0')
+          menu.classList.add('opacity-0', 'invisible', 'translate-y-2')
+        })
+      }
     })
 
     // Cleanup function

@@ -1,0 +1,236 @@
+---
+import Layout from "../../layouts/Layout.astro"
+import LinkButton from "../../components/LinkButton.astro"
+import Link from "../../components/icons/Link.astro"
+import SAP from "../../components/icons/SAP.astro"
+import Restful from "../../components/icons/Restful.astro"
+import Jira from "../../components/icons/Jira.astro"
+import Figma from "../../components/icons/Figma.astro"
+import DrawIO from "../../components/icons/DrawIO.astro"
+---
+
+<Layout
+  title="SAP Project - Huy Researcher"
+  description="SAP SD & Integration Suite project at Orion Food Vina"
+>
+  <main class="px-4 py-16 min-h-screen">
+    <!-- Hero Section -->
+    <section class="max-w-4xl mx-auto mb-16">
+      <div class="text-center mb-8">
+        <h1 class="text-4xl md:text-5xl font-bold text-gray-900 dark:text-white mb-4">
+          SAP - SD & Integration Suite
+        </h1>
+        <p class="text-xl text-gray-600 dark:text-gray-300 mb-6">
+          Enterprise Digital Transformation at Orion Food Vina
+        </p>
+        <div class="flex flex-wrap justify-center gap-3 mb-8">
+          <span class="flex items-center gap-2 bg-blue-100 dark:bg-blue-900 text-blue-800 dark:text-blue-200 px-4 py-2 rounded-full">
+            <SAP class="size-5" />
+            SAP ERP
+          </span>
+          <span class="flex items-center gap-2 bg-green-100 dark:bg-green-900 text-green-800 dark:text-green-200 px-4 py-2 rounded-full">
+            <Restful class="size-5" />
+            RESTful API
+          </span>
+          <span class="flex items-center gap-2 bg-purple-100 dark:bg-purple-900 text-purple-800 dark:text-purple-200 px-4 py-2 rounded-full">
+            <Jira class="size-5" />
+            Jira
+          </span>
+        </div>
+      </div>
+      
+      <!-- Project Image -->
+      <div class="relative overflow-hidden rounded-2xl shadow-2xl mb-12">
+        <img 
+          src="/projects/SAP.png" 
+          alt="SAP Project Overview"
+          class="w-full h-64 md:h-96 object-cover"
+        />
+        <div class="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent"></div>
+      </div>
+    </section>
+
+    <!-- Project Details -->
+    <section class="max-w-4xl mx-auto">
+      <div class="grid md:grid-cols-2 gap-12 mb-16">
+        <!-- Project Overview -->
+        <div class="space-y-6">
+          <h2 class="text-3xl font-bold text-gray-900 dark:text-white mb-6">Project Overview</h2>
+          
+          <div class="bg-white dark:bg-gray-800 rounded-xl p-6 shadow-lg border border-gray-200 dark:border-gray-700">
+            <h3 class="text-xl font-semibold text-gray-900 dark:text-white mb-4">Company Context</h3>
+            <p class="text-gray-600 dark:text-gray-300 leading-relaxed">
+              Orion Food Vina is one of the largest confectionery manufacturers in South Korea and Vietnam, requiring a comprehensive digital transformation to streamline their sales and distribution processes across multiple markets.
+            </p>
+          </div>
+
+          <div class="bg-white dark:bg-gray-800 rounded-xl p-6 shadow-lg border border-gray-200 dark:border-gray-700">
+            <h3 class="text-xl font-semibold text-gray-900 dark:text-white mb-4">Project Scope</h3>
+            <p class="text-gray-600 dark:text-gray-300 leading-relaxed">
+              Implementation of SAP Sales & Distribution (SD) module with complete integration suite, connecting PDA systems for sales personnel, logistics systems, and invoice management platforms.
+            </p>
+          </div>
+        </div>
+
+        <!-- Technical Details -->
+        <div class="space-y-6">
+          <h2 class="text-3xl font-bold text-gray-900 dark:text-white mb-6">Technical Details</h2>
+          
+          <div class="space-y-4">
+            <div class="bg-gradient-to-r from-blue-50 to-indigo-50 dark:from-blue-900/20 dark:to-indigo-900/20 rounded-xl p-6 border border-blue-200 dark:border-blue-800">
+              <h4 class="font-semibold text-blue-900 dark:text-blue-200 mb-2">Timeline</h4>
+              <p class="text-blue-800 dark:text-blue-300">September 2024 - Ongoing Development</p>
+            </div>
+            
+            <div class="bg-gradient-to-r from-green-50 to-emerald-50 dark:from-green-900/20 dark:to-emerald-900/20 rounded-xl p-6 border border-green-200 dark:border-green-800">
+              <h4 class="font-semibold text-green-900 dark:text-green-200 mb-2">Team Size</h4>
+              <ul class="text-green-800 dark:text-green-300 space-y-1">
+                <li>• SAP Implementation: 200+ members</li>
+                <li>• Portal Website: 50 members</li>
+                <li>• Logistics System: 10 members</li>
+                <li>• Invoice System: 10 members</li>
+              </ul>
+            </div>
+            
+            <div class="bg-gradient-to-r from-purple-50 to-pink-50 dark:from-purple-900/20 dark:to-pink-900/20 rounded-xl p-6 border border-purple-200 dark:border-purple-800">
+              <h4 class="font-semibold text-purple-900 dark:text-purple-200 mb-2">My Role</h4>
+              <p class="text-purple-800 dark:text-purple-300">Business Analyst - Sales & Distribution Division</p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Key Responsibilities -->
+      <div class="mb-16">
+        <h2 class="text-3xl font-bold text-gray-900 dark:text-white mb-8 text-center">Key Responsibilities</h2>
+        <div class="grid md:grid-cols-3 gap-6">
+          <div class="bg-white dark:bg-gray-800 rounded-xl p-6 shadow-lg border border-gray-200 dark:border-gray-700 hover:transform hover:scale-105 transition-all duration-300">
+            <div class="w-12 h-12 bg-blue-100 dark:bg-blue-900 rounded-lg flex items-center justify-center mb-4">
+              <SAP class="size-6 text-blue-600 dark:text-blue-400" />
+            </div>
+            <h3 class="text-xl font-semibold text-gray-900 dark:text-white mb-3">Business Process Analysis</h3>
+            <p class="text-gray-600 dark:text-gray-300">
+              Analyzing and documenting current business processes, identifying optimization opportunities, and designing future-state workflows for the SAP SD implementation.
+            </p>
+          </div>
+          
+          <div class="bg-white dark:bg-gray-800 rounded-xl p-6 shadow-lg border border-gray-200 dark:border-gray-700 hover:transform hover:scale-105 transition-all duration-300">
+            <div class="w-12 h-12 bg-green-100 dark:bg-green-900 rounded-lg flex items-center justify-center mb-4">
+              <Restful class="size-6 text-green-600 dark:text-green-400" />
+            </div>
+            <h3 class="text-xl font-semibold text-gray-900 dark:text-white mb-3">API Integration Management</h3>
+            <p class="text-gray-600 dark:text-gray-300">
+              Managing and coordinating API integrations between PDA systems, SAP SD module, and logistics platforms to ensure seamless data flow and real-time synchronization.
+            </p>
+          </div>
+          
+          <div class="bg-white dark:bg-gray-800 rounded-xl p-6 shadow-lg border border-gray-200 dark:border-gray-700 hover:transform hover:scale-105 transition-all duration-300">
+            <div class="w-12 h-12 bg-purple-100 dark:bg-purple-900 rounded-lg flex items-center justify-center mb-4">
+              <Jira class="size-6 text-purple-600 dark:text-purple-400" />
+            </div>
+            <h3 class="text-xl font-semibold text-gray-900 dark:text-white mb-3">Stakeholder Liaison</h3>
+            <p class="text-gray-600 dark:text-gray-300">
+              Acting as primary liaison between business stakeholders and technical teams, ensuring requirements are properly translated and implemented throughout the project lifecycle.
+            </p>
+          </div>
+        </div>
+      </div>
+
+      <!-- Tools & Technologies -->
+      <div class="mb-16">
+        <h2 class="text-3xl font-bold text-gray-900 dark:text-white mb-8 text-center">Tools & Technologies</h2>
+        <div class="flex flex-wrap justify-center gap-4">
+          <div class="flex items-center gap-2 bg-white dark:bg-gray-800 px-4 py-2 rounded-lg shadow border border-gray-200 dark:border-gray-700">
+            <SAP class="size-5" />
+            <span class="text-gray-800 dark:text-gray-200">SAP SD Module</span>
+          </div>
+          <div class="flex items-center gap-2 bg-white dark:bg-gray-800 px-4 py-2 rounded-lg shadow border border-gray-200 dark:border-gray-700">
+            <Restful class="size-5" />
+            <span class="text-gray-800 dark:text-gray-200">RESTful APIs</span>
+          </div>
+          <div class="flex items-center gap-2 bg-white dark:bg-gray-800 px-4 py-2 rounded-lg shadow border border-gray-200 dark:border-gray-700">
+            <Jira class="size-5" />
+            <span class="text-gray-800 dark:text-gray-200">Jira Project Management</span>
+          </div>
+          <div class="flex items-center gap-2 bg-white dark:bg-gray-800 px-4 py-2 rounded-lg shadow border border-gray-200 dark:border-gray-700">
+            <Figma class="size-5" />
+            <span class="text-gray-800 dark:text-gray-200">Figma Design</span>
+          </div>
+          <div class="flex items-center gap-2 bg-white dark:bg-gray-800 px-4 py-2 rounded-lg shadow border border-gray-200 dark:border-gray-700">
+            <DrawIO class="size-5" />
+            <span class="text-gray-800 dark:text-gray-200">Draw.io Documentation</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- Project Impact -->
+      <div class="mb-16">
+        <h2 class="text-3xl font-bold text-gray-900 dark:text-white mb-8 text-center">Project Impact</h2>
+        <div class="bg-gradient-to-r from-blue-50 to-indigo-100 dark:from-blue-900/20 dark:to-indigo-900/30 rounded-2xl p-8 border border-blue-200 dark:border-blue-800">
+          <div class="grid md:grid-cols-2 gap-8">
+            <div>
+              <h3 class="text-2xl font-semibold text-blue-900 dark:text-blue-200 mb-4">Business Outcomes</h3>
+              <ul class="space-y-3 text-blue-800 dark:text-blue-300">
+                <li class="flex items-start gap-2">
+                  <span class="w-2 h-2 bg-blue-600 rounded-full mt-2 flex-shrink-0"></span>
+                  Streamlined sales processes across multiple regions
+                </li>
+                <li class="flex items-start gap-2">
+                  <span class="w-2 h-2 bg-blue-600 rounded-full mt-2 flex-shrink-0"></span>
+                  Real-time inventory and order management
+                </li>
+                <li class="flex items-start gap-2">
+                  <span class="w-2 h-2 bg-blue-600 rounded-full mt-2 flex-shrink-0"></span>
+                  Enhanced data accuracy and reporting capabilities
+                </li>
+                <li class="flex items-start gap-2">
+                  <span class="w-2 h-2 bg-blue-600 rounded-full mt-2 flex-shrink-0"></span>
+                  Improved operational efficiency for sales teams
+                </li>
+              </ul>
+            </div>
+            <div>
+              <h3 class="text-2xl font-semibold text-blue-900 dark:text-blue-200 mb-4">Technical Achievements</h3>
+              <ul class="space-y-3 text-blue-800 dark:text-blue-300">
+                <li class="flex items-start gap-2">
+                  <span class="w-2 h-2 bg-blue-600 rounded-full mt-2 flex-shrink-0"></span>
+                  Seamless integration between multiple systems
+                </li>
+                <li class="flex items-start gap-2">
+                  <span class="w-2 h-2 bg-blue-600 rounded-full mt-2 flex-shrink-0"></span>
+                  Scalable API architecture for future expansions
+                </li>
+                <li class="flex items-start gap-2">
+                  <span class="w-2 h-2 bg-blue-600 rounded-full mt-2 flex-shrink-0"></span>
+                  Comprehensive data validation and error handling
+                </li>
+                <li class="flex items-start gap-2">
+                  <span class="w-2 h-2 bg-blue-600 rounded-full mt-2 flex-shrink-0"></span>
+                  Mobile-first design for field sales operations
+                </li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- External Links -->
+      <div class="text-center">
+        <h2 class="text-3xl font-bold text-gray-900 dark:text-white mb-8">Learn More</h2>
+        <div class="flex flex-wrap justify-center gap-4">
+          <LinkButton href="https://www.mk.co.kr/en/it/10963955">
+            <Link class="size-4" />
+            Metanet Global News
+          </LinkButton>
+          <LinkButton href="https://www.dmspro.vn/orion-khoi-dong-du-an-chuyen-doi-so-cung-dmspro-buoc-tien-chien-luoc-trong-hieu-qua-kinh-doanh">
+            <Link class="size-4" />
+            DMSPRO Partnership
+          </LinkButton>
+          <LinkButton href="/">
+            <span class="text-sm">← Back to Portfolio</span>
+          </LinkButton>
+        </div>
+      </div>
+    </section>
+  </main>
+</Layout>
