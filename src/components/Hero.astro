@@ -10,11 +10,11 @@ import Skills from "./Skills.astro";
 ---
 
 <div class="flex flex-col gap-8">
-  <div class="flex items-center gap-8">
-    <div class="max-w-xl flex-1">
+  <div class="flex flex-col gap-8">
+    <div class="max-w-4xl">
       <div class="flex gap-4 mb-4">
         <img
-          class="rounded-full shadow-lg size-16"
+          class="rounded-full shadow-lg size-12 sm:size-16"
           src="/midudev.webp"
           alt={personalImageAlt}
         />
@@ -28,18 +28,18 @@ import Skills from "./Skills.astro";
         </a>
       </div>
       <h1
-        class="text-4xl font-bold tracking-tight text-gray-800 sm:text-5xl dark:text-white"
+        class="text-2xl sm:text-3xl lg:text-4xl xl:text-5xl font-bold tracking-tight text-gray-800 dark:text-white"
       >
         Hey, This is Huy Hoang (also Cris)
       </h1>
       <p
-        class="mt-6 text-xl text-gray-800 dark:[&>strong]:text-yellow-200 [&>strong]:text-yellow-500 [&>strong]:font-semibold dark:text-gray-300"
+        class="mt-4 sm:mt-6 text-base sm:text-lg lg:text-xl text-gray-800 dark:[&>strong]:text-yellow-200 [&>strong]:text-yellow-500 [&>strong]:font-semibold dark:text-gray-300"
       >
         +2 years of experience as <strong
           >Business Analyst and System Administration</strong
         > based in Ho Chi Minh City, Vietnam. I am really curious about your business canvas
       </p>
-      <nav class="flex flex-wrap gap-4 mt-8">
+      <nav class="flex flex-wrap gap-3 sm:gap-4 mt-6 sm:mt-8">
         <SocialPill href="mailto:quochuyhqh02@gmail.com">
           <MailIcon class="size-4" />
           Contact
@@ -50,13 +50,9 @@ import Skills from "./Skills.astro";
         </SocialPill>
         <SocialPill href="https://docs.google.com/document/d/1HC16FLADx_Q_3SmhbUp0rJxpJIlYHemD/edit?usp=sharing&ouid=103173570071703366223&rtpof=true&sd=true">
           <DocumentIcon class="size-4" />
-          Resumé
+          Resume
         </SocialPill>
       </nav>
-    </div>
-    <!-- AI Robot image on the right -->
-    <div class="flex-shrink-0 flex items-center justify-center">
-      <img src="/AIBot.png" alt="AI Robot" style="width:440px;height:440px;object-fit:contain;" />
     </div>
   </div>
 
@@ -120,14 +116,39 @@ import Skills from "./Skills.astro";
     text-align: center;
     font-size: 1rem;
   }
-  @media (max-width: 900px) {
+  @media (max-width: 1024px) {
     .skills-row {
       flex-direction: column;
       gap: 2rem;
       align-items: center;
     }
     .skills-glass-box {
+      padding: 1.5rem;
+      margin-top: 2rem;
+    }
+    .skill-item {
+      max-width: 100%;
+      min-width: auto;
+    }
+  }
+  
+  @media (max-width: 640px) {
+    .skills-glass-box {
       padding: 1rem;
+      margin-top: 1.5rem;
+      border-radius: 1rem;
+    }
+    .skill-item {
+      padding: 0.75rem;
+    }
+    .skill-item h2 {
+      font-size: 1.1rem;
+      margin-top: 0.75rem;
+      margin-bottom: 0.5rem;
+    }
+    .skill-item p {
+      font-size: 0.9rem;
+      line-height: 1.4;
     }
   }
 </style>
