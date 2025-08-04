@@ -117,13 +117,26 @@ const PROJECTS = [
     image: "/projects/Draedu.png",
     tags: [TAGS.FRAPPE, TAGS.FIGMA, TAGS.DRAWIO],
   },
+  {
+    title: "Thai Son - Education Management",
+    description: [
+      { label: "Project timeline", value: "August 2023 - November 2023" },
+      { label: "Project overview", value: "An innovative ERP system designed for driving school management, providing comprehensive tools for learner tracking, educator coordination, fee management, lesson scheduling, and progress monitoring." },
+      { label: "Team size", value: "8" },
+      { label: "Role", value: "Project Manager cum Business Analyst" },
+      { label: "Task", value: "Project management, stakeholder coordination, business analysis, quality assurance." }
+    ],
+    link4: "https://thaison.draerp.vn/#login",
+    image: "/projects/Thaison.jpg",
+    tags: [TAGS.FRAPPE, TAGS.FIGMA, TAGS.DRAWIO, TAGS.POWERBI],
+  },
 
 ]
 ---
 
 <div class="flex flex-col gap-y-16">
   {
-    PROJECTS.map(({ image, title, description, tags, link, github, link2, link3 }) => (
+    PROJECTS.map(({ image, title, description, tags, link, github, link2, link3, link4 }) => (
     <article class="flex flex-col space-x-0 space-y-8 group md:flex-row md:space-x-8 md:space-y-0">
   <div class="w-full md:w-1/2">
     <div class="relative flex flex-col items-center col-span-6 row-span-5 gap-8 transition duration-500 ease-in-out transform shadow-xl overflow-clip rounded-xl sm:rounded-xl md:group-hover:-translate-y-1 md:group-hover:shadow-2xl lg:border lg:border-gray-800 lg:hover:border-gray-700 lg:hover:bg-gray-800/50">
@@ -182,6 +195,12 @@ const PROJECTS = [
             <LinkButton href="https://draedu.vn/home">
               <Link class="size-4" />
               DraEdu
+            </LinkButton>
+          )}
+          {link4 && (
+            <LinkButton href="https://thaison.draerp.vn/#login">
+              <Link class="size-4" />
+              Thai Son
             </LinkButton>
           )}
         </footer>
