@@ -86,6 +86,7 @@ const PROJECTS = [
       { label: "Role", value: "Business Analyst in the Sales & Distribution (SD) division" },
       { label: "Task", value: "Acting as a liaison and analyzing business processes, along with managing APIs between relevant systems, including the PDA for sales personnel, SAP SD, and the logistics system." }
     ],
+    projectPage: "/projects/sap",
     link: "https://www.mk.co.kr/en/it/10963955",
     github: "https://www.dmspro.vn/orion-khoi-dong-du-an-chuyen-doi-so-cung-dmspro-buoc-tien-chien-luoc-trong-hieu-qua-kinh-doanh#:~:text=DMSpro%20cung%20c%E1%BA%A5p%20m%E1%BB%96t%20gi%E1%BA%A3i,h%C6%A1n%20ngay%20t%E1%BA%A1i%20c%E1%BB%ADa%20h%C3%A0ng",
     image: "/projects/SAP.png",
@@ -100,6 +101,7 @@ const PROJECTS = [
       { label: "Role", value: "Business Analyst cum Tester" },
       { label: "Task", value: "Analyze user requirement, data validation & cleaning, UI UX design." }
     ],
+    projectPage: "/projects/heatmap",
     link2: "https://mhm.orionvina.vn/login/index.html",
     image: "/projects/MHM.png",
     tags: [TAGS.JS, TAGS.MONGO, TAGS.POWERBI, TAGS.DRAWIO],
@@ -113,6 +115,7 @@ const PROJECTS = [
       { label: "Role", value: "Business Analyst cum UI/UX Designer" },
       { label: "Task", value: "Analyze user requirement, unit test, UI UX design." }
     ],
+    projectPage: "/projects/edutech",
     link3: "https://draedu.vn/home",
     image: "/projects/Draedu.png",
     tags: [TAGS.FRAPPE, TAGS.FIGMA, TAGS.DRAWIO],
@@ -126,6 +129,7 @@ const PROJECTS = [
       { label: "Role", value: "Project Manager cum Business Analyst" },
       { label: "Task", value: "Project management, stakeholder coordination, business analysis, quality assurance." }
     ],
+    projectPage: "/projects/thaison",
     link4: "https://thaison.draerp.vn/#login",
     image: "/projects/Thaison.jpg",
     tags: [TAGS.FRAPPE, TAGS.FIGMA, TAGS.DRAWIO, TAGS.POWERBI],
@@ -136,18 +140,26 @@ const PROJECTS = [
 
 <div class="flex flex-col gap-y-16">
   {
-    PROJECTS.map(({ image, title, description, tags, link, github, link2, link3, link4 }) => (
+    PROJECTS.map(({ image, title, description, tags, projectPage, link, github, link2, link3, link4 }) => (
     <article class="flex flex-col space-x-0 space-y-8 group md:flex-row md:space-x-8 md:space-y-0">
+  
+  <!-- Clickable image -->
   <div class="w-full md:w-1/2">
-    <div class="relative flex flex-col items-center col-span-6 row-span-5 gap-8 transition duration-500 ease-in-out transform shadow-xl overflow-clip rounded-xl sm:rounded-xl md:group-hover:-translate-y-1 md:group-hover:shadow-2xl lg:border lg:border-gray-800 lg:hover:border-gray-700 lg:hover:bg-gray-800/50">
-      <img alt="Recién llegado vs 5 años en Nueva Zelanda" class="object-cover object-top w-full h-56 transition duration-500 sm:h-full md:scale-110 md:group-hover:scale-105" loading="lazy" src={image} />
-    </div>
+    <a href={projectPage} class="block">
+      <div class="relative flex flex-col items-center col-span-6 row-span-5 gap-8 transition duration-500 ease-in-out transform shadow-xl overflow-clip rounded-xl sm:rounded-xl md:group-hover:-translate-y-1 md:group-hover:shadow-2xl lg:border lg:border-gray-800 lg:hover:border-gray-700 lg:hover:bg-gray-800/50 cursor-pointer">
+        <img alt="Project preview" class="object-cover object-top w-full h-56 transition duration-500 sm:h-full md:scale-110 md:group-hover:scale-105" loading="lazy" src={image} />
+      </div>
+    </a>
   </div>
 
   <div class="w-full md:w-1/2 md:max-w-lg">
-    <h3 class="text-2xl font-bold text-gray-800 dark:text-gray-100">
-      {title}
-    </h3>
+    <!-- Clickable title -->
+    <a href={projectPage}>
+      <h3 class="text-2xl font-bold text-gray-800 dark:text-gray-100 hover:text-blue-600 dark:hover:text-blue-400 transition-colors cursor-pointer">
+        {title}
+      </h3>
+    </a>
+    
     <div class="flex flex-wrap mt-2">
       <ul class="flex flex-row mb-2 gap-x-2">
           {tags.map((tag) => (
@@ -171,12 +183,12 @@ const PROJECTS = [
           </ul>
         ) : description}
       </div>
+      
       <footer class="flex items-end justify-start mt-4 gap-x-4">
           {github && (
             <LinkButton href="https://www.mk.co.kr/en/it/10963955">
               <Link class="size-4" />
               Metanet Global
-              
             </LinkButton>
           )}
           {link && (
