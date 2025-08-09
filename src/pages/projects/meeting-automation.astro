@@ -1,0 +1,234 @@
+---
+import Layout from "../../layouts/Layout.astro"
+import LinkButton from "../../components/LinkButton.astro"
+import Link from "../../components/icons/Link.astro"
+import GitHub from "../../components/icons/GitHub.astro"
+---
+
+<Layout
+  title="AI Meeting Creation Automation - Huy Researcher"
+  description="Intelligent automation system for streamlining meeting creation processes through email integration"
+>
+  <main class="px-4 py-16 pt-20 md:pt-16 min-h-screen">
+    <!-- Hero Section -->
+    <section class="max-w-4xl mx-auto mb-16">
+      <div class="text-center mb-8">
+        <h1 class="text-4xl md:text-5xl font-bold text-gray-900 dark:text-white mb-4">
+          AI Meeting Creation Automation
+        </h1>
+        <p class="text-xl text-gray-600 dark:text-gray-300 mb-6">
+          Intelligent automation system using Gemini AI, n8n, and Python to automatically create Google Meet meetings from email analysis
+        </p>
+        <div class="flex flex-wrap justify-center gap-3 mb-8">
+          <span class="bg-blue-100 dark:bg-blue-900 text-blue-800 dark:text-blue-200 px-4 py-2 rounded-full">
+            n8n Automation
+          </span>
+          <span class="bg-green-100 dark:bg-green-900 text-green-800 dark:text-green-200 px-4 py-2 rounded-full">
+            Python AI
+          </span>
+          <span class="bg-purple-100 dark:bg-purple-900 text-purple-800 dark:text-purple-200 px-4 py-2 rounded-full">
+            Gemini AI
+          </span>
+          <span class="bg-orange-100 dark:bg-orange-900 text-orange-800 dark:text-orange-200 px-4 py-2 rounded-full">
+            Google APIs
+          </span>
+        </div>
+        
+        <!-- Action Buttons -->
+        <div class="flex flex-col sm:flex-row gap-4 justify-center">
+          <LinkButton href="https://github.com/HuyResearcher/meeting-creation-automation">
+            <GitHub class="size-4" />
+            View Source Code
+          </LinkButton>
+          <LinkButton href="https://github.com/HuyResearcher/meeting-creation-automation">
+            <Link class="size-4" />
+            Live Demo
+          </LinkButton>
+        </div>
+      </div>
+      
+      <!-- Project Image -->
+      <div class="relative overflow-hidden rounded-2xl shadow-2xl mb-12">
+        <img 
+          src="/projects/AIMail.webp" 
+          alt="AI Meeting Automation Workflow"
+          class="w-full h-64 md:h-96 object-cover"
+        />
+        <div class="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent"></div>
+      </div>
+    </section>
+
+    <!-- Project Details -->
+    <section class="max-w-4xl mx-auto">
+      <div class="grid md:grid-cols-2 gap-12 mb-16">
+        <!-- Project Overview -->
+        <div class="space-y-6">
+          <h2 class="text-3xl font-bold text-gray-900 dark:text-white mb-6">Project Overview</h2>
+          
+          <div class="bg-white dark:bg-gray-800 rounded-xl p-6 shadow-lg border border-gray-200 dark:border-gray-700">
+            <h3 class="text-xl font-semibold text-gray-900 dark:text-white mb-4">Project Scope</h3>
+            <p class="text-gray-600 dark:text-gray-300 leading-relaxed">
+              An intelligent automation system that monitors Gmail inbox every 5 minutes, uses Gemini AI to analyze email content, and automatically creates Google Meet meetings with calendar invitations when collaboration is needed.
+            </p>
+          </div>
+
+          <div class="bg-white dark:bg-gray-800 rounded-xl p-6 shadow-lg border border-gray-200 dark:border-gray-700">
+            <h3 class="text-xl font-semibold text-gray-900 dark:text-white mb-4">Key Innovation</h3>
+            <p class="text-gray-600 dark:text-gray-300 leading-relaxed">
+              Combines email processing automation with AI-powered decision making to eliminate manual meeting scheduling, achieving 70% confidence threshold for meeting necessity determination.
+            </p>
+          </div>
+
+          <div class="bg-white dark:bg-gray-800 rounded-xl p-6 shadow-lg border border-gray-200 dark:border-gray-700">
+            <h3 class="text-xl font-semibold text-gray-900 dark:text-white mb-4">Impact & Results</h3>
+            <ul class="text-gray-600 dark:text-gray-300 space-y-2">
+              <li>• Automated meeting creation from email analysis</li>
+              <li>• 70% AI confidence threshold for decision making</li>
+              <li>• 5-minute monitoring intervals for real-time processing</li>
+              <li>• 50+ emails processed per batch efficiently</li>
+            </ul>
+          </div>
+        </div>
+
+        <!-- Technical Details -->
+        <div class="space-y-6">
+          <h2 class="text-3xl font-bold text-gray-900 dark:text-white mb-6">Technical Details</h2>
+          
+          <div class="space-y-4">
+            <div class="bg-gradient-to-r from-blue-50 to-indigo-50 dark:from-blue-900/20 dark:to-indigo-900/20 rounded-xl p-6 border border-blue-200 dark:border-blue-800">
+              <h4 class="font-semibold text-blue-900 dark:text-blue-200 mb-2">Timeline</h4>
+              <p class="text-blue-800 dark:text-blue-300">November 2024 - Individual Project (1 Month)</p>
+            </div>
+            
+            <div class="bg-gradient-to-r from-green-50 to-emerald-50 dark:from-green-900/20 dark:to-emerald-900/20 rounded-xl p-6 border border-green-200 dark:border-green-800">
+              <h4 class="font-semibold text-green-900 dark:text-green-200 mb-2">Core Technologies</h4>
+              <ul class="text-green-800 dark:text-green-300 space-y-1">
+                <li>• Google Gemini AI for content analysis</li>
+                <li>• n8n workflow automation platform</li>
+                <li>• Python for AI processing logic</li>
+                <li>• Gmail & Google Calendar APIs</li>
+                <li>• Docker for containerized deployment</li>
+              </ul>
+            </div>
+            
+            <div class="bg-gradient-to-r from-purple-50 to-pink-50 dark:from-purple-900/20 dark:to-pink-900/20 rounded-xl p-6 border border-purple-200 dark:border-purple-800">
+              <h4 class="font-semibold text-purple-900 dark:text-purple-200 mb-2">Project Type</h4>
+              <p class="text-purple-800 dark:text-purple-300">AI Automation & Workflow Development</p>
+            </div>
+
+            <div class="bg-gradient-to-r from-orange-50 to-red-50 dark:from-orange-900/20 dark:to-red-900/20 rounded-xl p-6 border border-orange-200 dark:border-orange-800">
+              <h4 class="font-semibold text-orange-900 dark:text-orange-200 mb-2">Key Features</h4>
+              <ul class="text-orange-800 dark:text-orange-300 space-y-1">
+                <li>• Real-time email monitoring</li>
+                <li>• AI-powered decision making</li>
+                <li>• Automated calendar integration</li>
+                <li>• Web-based monitoring dashboard</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- AI Decision Logic Section -->
+      <section class="mb-16">
+        <h2 class="text-3xl font-bold text-gray-900 dark:text-white mb-8 text-center">AI Decision Logic</h2>
+        <div class="grid md:grid-cols-2 gap-8">
+          <div class="bg-green-50 dark:bg-green-900/20 p-6 rounded-xl border border-green-200 dark:border-green-800">
+            <h3 class="font-semibold text-green-800 dark:text-green-400 mb-4 flex items-center gap-2 text-lg">
+              <span>✅</span> Creates Meeting For:
+            </h3>
+            <ul class="space-y-2 text-green-700 dark:text-green-300">
+              <li>• Explicit meeting requests ("let's meet", "schedule a call")</li>
+              <li>• Coordination needs ("sync up", "align on")</li>
+              <li>• Group decisions ("discuss", "review together")</li>
+              <li>• Urgent matters ("ASAP", "urgent discussion")</li>
+              <li>• Project planning ("kick-off", "planning session")</li>
+            </ul>
+          </div>
+          <div class="bg-red-50 dark:bg-red-900/20 p-6 rounded-xl border border-red-200 dark:border-red-800">
+            <h3 class="font-semibold text-red-800 dark:text-red-400 mb-4 flex items-center gap-2 text-lg">
+              <span>❌</span> Skips Meeting For:
+            </h3>
+            <ul class="space-y-2 text-red-700 dark:text-red-300">
+              <li>• Information sharing ("FYI", "update")</li>
+              <li>• Automated notifications (system emails)</li>
+              <li>• Simple confirmations ("thanks", "got it")</li>
+              <li>• Individual tasks (no coordination needed)</li>
+              <li>• Already scheduled events</li>
+            </ul>
+          </div>
+        </div>
+      </section>
+
+      <!-- Technical Implementation -->
+      <section class="mb-16">
+        <h2 class="text-3xl font-bold text-gray-900 dark:text-white mb-8 text-center">Technical Implementation</h2>
+        <div class="bg-white dark:bg-gray-800 rounded-xl p-8 shadow-lg border border-gray-200 dark:border-gray-700">
+          <h3 class="text-xl font-semibold text-gray-900 dark:text-white mb-6">Architecture & Workflow</h3>
+          <div class="space-y-6">
+            <div class="flex items-start space-x-4">
+              <div class="w-10 h-10 bg-blue-500 rounded-full flex items-center justify-center text-white font-semibold flex-shrink-0">1</div>
+              <div class="min-w-0">
+                <h4 class="font-medium text-gray-900 dark:text-white mb-2">Email Monitoring</h4>
+                <p class="text-gray-600 dark:text-gray-300">n8n scheduler triggers Python script every 5 minutes to check Gmail for unread emails, processing up to 50 emails per batch.</p>
+              </div>
+            </div>
+            <div class="flex items-start space-x-4">
+              <div class="w-10 h-10 bg-green-500 rounded-full flex items-center justify-center text-white font-semibold flex-shrink-0">2</div>
+              <div class="min-w-0">
+                <h4 class="font-medium text-gray-900 dark:text-white mb-2">AI Content Analysis</h4>
+                <p class="text-gray-600 dark:text-gray-300">Gemini AI analyzes email content, subject, sender, and recipients to determine meeting necessity with confidence scoring.</p>
+              </div>
+            </div>
+            <div class="flex items-start space-x-4">
+              <div class="w-10 h-10 bg-purple-500 rounded-full flex items-center justify-center text-white font-semibold flex-shrink-0">3</div>
+              <div class="min-w-0">
+                <h4 class="font-medium text-gray-900 dark:text-white mb-2">Meeting Decision</h4>
+                <p class="text-gray-600 dark:text-gray-300">System evaluates AI confidence score (70% threshold) and creates structured meeting data including participants and timing.</p>
+              </div>
+            </div>
+            <div class="flex items-start space-x-4">
+              <div class="w-10 h-10 bg-orange-500 rounded-full flex items-center justify-center text-white font-semibold flex-shrink-0">4</div>
+              <div class="min-w-0">
+                <h4 class="font-medium text-gray-900 dark:text-white mb-2">Calendar Integration</h4>
+                <p class="text-gray-600 dark:text-gray-300">Google Calendar API creates events with Meet links, sends invitations, and sets up automated reminders for all participants.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Results Dashboard -->
+      <section class="mb-16">
+        <h2 class="text-3xl font-bold text-gray-900 dark:text-white mb-8 text-center">Performance Metrics</h2>
+        <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
+          <div class="text-center p-6 bg-blue-50 dark:bg-blue-900/20 rounded-xl border border-blue-200 dark:border-blue-800">
+            <div class="text-3xl font-bold text-blue-600 dark:text-blue-400 mb-2">70%</div>
+            <div class="text-gray-600 dark:text-gray-300 font-medium">AI Confidence</div>
+            <div class="text-sm text-gray-500 dark:text-gray-400">threshold for meeting creation</div>
+          </div>
+          <div class="text-center p-6 bg-green-50 dark:bg-green-900/20 rounded-xl border border-green-200 dark:border-green-800">
+            <div class="text-3xl font-bold text-green-600 dark:text-green-400 mb-2">5min</div>
+            <div class="text-gray-600 dark:text-gray-300 font-medium">Check Interval</div>
+            <div class="text-sm text-gray-500 dark:text-gray-400">automated email monitoring</div>
+          </div>
+          <div class="text-center p-6 bg-purple-50 dark:bg-purple-900/20 rounded-xl border border-purple-200 dark:border-purple-800 sm:col-span-2 lg:col-span-1">
+            <div class="text-3xl font-bold text-purple-600 dark:text-purple-400 mb-2">50+</div>
+            <div class="text-gray-600 dark:text-gray-300 font-medium">Emails/Check</div>
+            <div class="text-sm text-gray-500 dark:text-gray-400">maximum processing capacity</div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Navigation -->
+      <div class="flex flex-col sm:flex-row justify-between items-center gap-4 pt-8 border-t border-gray-200 dark:border-gray-700">
+        <LinkButton href="/">
+          ← Back to Portfolio
+        </LinkButton>
+        <LinkButton href="https://github.com/HuyResearcher/meeting-creation-automation">
+          View on GitHub →
+        </LinkButton>
+      </div>
+    </section>
+  </main>
+</Layout>

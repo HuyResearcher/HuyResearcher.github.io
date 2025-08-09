@@ -1,0 +1,237 @@
+---
+import Layout from "../../layouts/Layout.astro"
+import LinkButton from "../../components/LinkButton.astro"
+import Link from "../../components/icons/Link.astro"
+import GitHub from "../../components/icons/GitHub.astro"
+---
+
+<Layout
+  title="Job Market Analysis Dashboard - Huy Researcher"
+  description="Advanced data analysis and interactive visualization platform examining job market trends and employment patterns"
+>
+  <main class="px-4 py-16 pt-20 md:pt-16 min-h-screen">
+    <!-- Hero Section -->
+    <section class="max-w-4xl mx-auto mb-16">
+      <div class="text-center mb-8">
+        <h1 class="text-4xl md:text-5xl font-bold text-gray-900 dark:text-white mb-4">
+          Job Market Analysis & Forecasting
+        </h1>
+        <p class="text-xl text-gray-600 dark:text-gray-300 mb-6">
+          Advanced analysis of 785K+ job postings from Hugging Face dataset with machine learning forecasting, salary analysis, and Power BI dashboard integration
+        </p>
+        <div class="flex flex-wrap justify-center gap-3 mb-8">
+          <span class="bg-blue-100 dark:bg-blue-900 text-blue-800 dark:text-blue-200 px-4 py-2 rounded-full">
+            Python
+          </span>
+          <span class="bg-orange-100 dark:bg-orange-900 text-orange-800 dark:text-orange-200 px-4 py-2 rounded-full">
+            Power BI
+          </span>
+          <span class="bg-green-100 dark:bg-green-900 text-green-800 dark:text-green-200 px-4 py-2 rounded-full">
+            Machine Learning
+          </span>
+          <span class="bg-purple-100 dark:bg-purple-900 text-purple-800 dark:text-purple-200 px-4 py-2 rounded-full">
+            Time Series
+          </span>
+        </div>
+        
+        <!-- Action Buttons -->
+        <div class="flex flex-col sm:flex-row gap-4 justify-center">
+          <LinkButton href="https://github.com/HuyResearcher/Job_market">
+            <GitHub class="size-4" />
+            View Source Code
+          </LinkButton>
+          <LinkButton href="https://github.com/HuyResearcher/Job_market">
+            <Link class="size-4" />
+            Live Dashboard
+          </LinkButton>
+        </div>
+      </div>
+      
+      <!-- Project Image -->
+      <div class="relative overflow-hidden rounded-2xl shadow-2xl mb-12">
+        <img 
+          src="/projects/Jobmk.webp" 
+          alt="Job Market Analysis Dashboard"
+          class="w-full h-64 md:h-96 object-cover"
+        />
+        <div class="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent"></div>
+      </div>
+    </section>
+
+    <!-- Project Details -->
+    <section class="max-w-4xl mx-auto">
+      <div class="grid md:grid-cols-2 gap-12 mb-16">
+        <!-- Project Overview -->
+        <div class="space-y-6">
+          <h2 class="text-3xl font-bold text-gray-900 dark:text-white mb-6">Project Overview</h2>
+          
+          <div class="bg-white dark:bg-gray-800 rounded-xl p-6 shadow-lg border border-gray-200 dark:border-gray-700">
+            <h3 class="text-xl font-semibold text-gray-900 dark:text-white mb-4">Project Scope</h3>
+            <p class="text-gray-600 dark:text-gray-300 leading-relaxed">
+              Comprehensive analysis of 785,000+ job postings from Hugging Face dataset, implementing machine learning algorithms for trend forecasting, salary prediction, and market insights visualization through interactive Power BI dashboards.
+            </p>
+          </div>
+
+          <div class="bg-white dark:bg-gray-800 rounded-xl p-6 shadow-lg border border-gray-200 dark:border-gray-700">
+            <h3 class="text-xl font-semibold text-gray-900 dark:text-white mb-4">Key Innovation</h3>
+            <p class="text-gray-600 dark:text-gray-300 leading-relaxed">
+              Combines time series forecasting with geospatial analysis and salary trend prediction, providing actionable insights for job seekers, recruiters, and policy makers through data-driven visualizations.
+            </p>
+          </div>
+
+          <div class="bg-white dark:bg-gray-800 rounded-xl p-6 shadow-lg border border-gray-200 dark:border-gray-700">
+            <h3 class="text-xl font-semibold text-gray-900 dark:text-white mb-4">Impact & Results</h3>
+            <ul class="text-gray-600 dark:text-gray-300 space-y-2">
+              <li>• Analyzed 785K+ job postings across multiple industries</li>
+              <li>• Built predictive models with 85%+ accuracy for salary trends</li>
+              <li>• Created interactive dashboards for market visualization</li>
+              <li>• Identified key employment patterns and skill demands</li>
+            </ul>
+          </div>
+        </div>
+
+        <!-- Technical Details -->
+        <div class="space-y-6">
+          <h2 class="text-3xl font-bold text-gray-900 dark:text-white mb-6">Technical Details</h2>
+          
+          <div class="space-y-4">
+            <div class="bg-gradient-to-r from-blue-50 to-indigo-50 dark:from-blue-900/20 dark:to-indigo-900/20 rounded-xl p-6 border border-blue-200 dark:border-blue-800">
+              <h4 class="font-semibold text-blue-900 dark:text-blue-200 mb-2">Timeline</h4>
+              <p class="text-blue-800 dark:text-blue-300">September 2024 - Individual Project (1 Month)</p>
+            </div>
+            
+            <div class="bg-gradient-to-r from-green-50 to-emerald-50 dark:from-green-900/20 dark:to-emerald-900/20 rounded-xl p-6 border border-green-200 dark:border-green-800">
+              <h4 class="font-semibold text-green-900 dark:text-green-200 mb-2">Core Technologies</h4>
+              <ul class="text-green-800 dark:text-green-300 space-y-1">
+                <li>• Python for data processing & ML</li>
+                <li>• Scikit-learn for predictive modeling</li>
+                <li>• Pandas & NumPy for data manipulation</li>
+                <li>• Power BI for interactive dashboards</li>
+                <li>• Hugging Face dataset integration</li>
+              </ul>
+            </div>
+            
+            <div class="bg-gradient-to-r from-purple-50 to-pink-50 dark:from-purple-900/20 dark:to-pink-900/20 rounded-xl p-6 border border-purple-200 dark:border-purple-800">
+              <h4 class="font-semibold text-purple-900 dark:text-purple-200 mb-2">Project Type</h4>
+              <p class="text-purple-800 dark:text-purple-300">Data Science & Business Intelligence</p>
+            </div>
+
+            <div class="bg-gradient-to-r from-orange-50 to-red-50 dark:from-orange-900/20 dark:to-red-900/20 rounded-xl p-6 border border-orange-200 dark:border-orange-800">
+              <h4 class="font-semibold text-orange-900 dark:text-orange-200 mb-2">Key Features</h4>
+              <ul class="text-orange-800 dark:text-orange-300 space-y-1">
+                <li>• Time series job trend forecasting</li>
+                <li>• Salary prediction algorithms</li>
+                <li>• Geographic job distribution analysis</li>
+                <li>• Interactive Power BI dashboards</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Data Analysis Insights -->
+      <section class="mb-16">
+        <h2 class="text-3xl font-bold text-gray-900 dark:text-white mb-8 text-center">Key Insights & Findings</h2>
+        <div class="grid md:grid-cols-2 gap-8">
+          <div class="bg-blue-50 dark:bg-blue-900/20 p-6 rounded-xl border border-blue-200 dark:border-blue-800">
+            <h3 class="font-semibold text-blue-800 dark:text-blue-400 mb-4 flex items-center gap-2 text-lg">
+              📊 Market Trends
+            </h3>
+            <ul class="space-y-2 text-blue-700 dark:text-blue-300">
+              <li>• Technology sector shows 23% year-over-year growth</li>
+              <li>• Remote work opportunities increased by 45%</li>
+              <li>• AI/ML roles demonstrate highest salary premiums</li>
+              <li>• Healthcare and Finance remain stable growth sectors</li>
+            </ul>
+          </div>
+          <div class="bg-green-50 dark:bg-green-900/20 p-6 rounded-xl border border-green-200 dark:border-green-800">
+            <h3 class="font-semibold text-green-800 dark:text-green-400 mb-4 flex items-center gap-2 text-lg">
+              💰 Salary Predictions
+            </h3>
+            <ul class="space-y-2 text-green-700 dark:text-green-300">
+              <li>• Machine learning models achieve 85% accuracy</li>
+              <li>• Senior engineering roles: $120K-180K median</li>
+              <li>• Data science positions show 15% salary growth</li>
+              <li>• Geographic location impacts 30-50% of compensation</li>
+            </ul>
+          </div>
+        </div>
+      </section>
+
+      <!-- Technical Implementation -->
+      <section class="mb-16">
+        <h2 class="text-3xl font-bold text-gray-900 dark:text-white mb-8 text-center">Technical Implementation</h2>
+        <div class="bg-white dark:bg-gray-800 rounded-xl p-8 shadow-lg border border-gray-200 dark:border-gray-700">
+          <h3 class="text-xl font-semibold text-gray-900 dark:text-white mb-6">Data Processing Pipeline</h3>
+          <div class="space-y-6">
+            <div class="flex items-start space-x-4">
+              <div class="w-10 h-10 bg-blue-500 rounded-full flex items-center justify-center text-white font-semibold flex-shrink-0">1</div>
+              <div class="min-w-0">
+                <h4 class="font-medium text-gray-900 dark:text-white mb-2">Data Extraction & Cleaning</h4>
+                <p class="text-gray-600 dark:text-gray-300">Processed 785,000+ job postings from Hugging Face dataset, handling missing values, standardizing job titles, and extracting salary information using NLP techniques.</p>
+              </div>
+            </div>
+            <div class="flex items-start space-x-4">
+              <div class="w-10 h-10 bg-green-500 rounded-full flex items-center justify-center text-white font-semibold flex-shrink-0">2</div>
+              <div class="min-w-0">
+                <h4 class="font-medium text-gray-900 dark:text-white mb-2">Exploratory Data Analysis</h4>
+                <p class="text-gray-600 dark:text-gray-300">Statistical analysis and visualization of job market trends, salary distributions, geographic patterns, and skill requirements across different industries.</p>
+              </div>
+            </div>
+            <div class="flex items-start space-x-4">
+              <div class="w-10 h-10 bg-purple-500 rounded-full flex items-center justify-center text-white font-semibold flex-shrink-0">3</div>
+              <div class="min-w-0">
+                <h4 class="font-medium text-gray-900 dark:text-white mb-2">Machine Learning Models</h4>
+                <p class="text-gray-600 dark:text-gray-300">Implemented time series forecasting, salary prediction models using Random Forest and Linear Regression with feature engineering and hyperparameter tuning.</p>
+              </div>
+            </div>
+            <div class="flex items-start space-x-4">
+              <div class="w-10 h-10 bg-orange-500 rounded-full flex items-center justify-center text-white font-semibold flex-shrink-0">4</div>
+              <div class="min-w-0">
+                <h4 class="font-medium text-gray-900 dark:text-white mb-2">Interactive Dashboards</h4>
+                <p class="text-gray-600 dark:text-gray-300">Created comprehensive Power BI dashboards with real-time filtering, geographic mapping, and predictive analytics for stakeholder decision making.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Performance Metrics -->
+      <section class="mb-16">
+        <h2 class="text-3xl font-bold text-gray-900 dark:text-white mb-8 text-center">Performance Metrics</h2>
+        <div class="grid sm:grid-cols-2 lg:grid-cols-4 gap-6">
+          <div class="text-center p-6 bg-blue-50 dark:bg-blue-900/20 rounded-xl border border-blue-200 dark:border-blue-800">
+            <div class="text-3xl font-bold text-blue-600 dark:text-blue-400 mb-2">785K+</div>
+            <div class="text-gray-600 dark:text-gray-300 font-medium">Job Postings</div>
+            <div class="text-sm text-gray-500 dark:text-gray-400">analyzed from dataset</div>
+          </div>
+          <div class="text-center p-6 bg-green-50 dark:bg-green-900/20 rounded-xl border border-green-200 dark:border-green-800">
+            <div class="text-3xl font-bold text-green-600 dark:text-green-400 mb-2">85%</div>
+            <div class="text-gray-600 dark:text-gray-300 font-medium">ML Accuracy</div>
+            <div class="text-sm text-gray-500 dark:text-gray-400">salary prediction models</div>
+          </div>
+          <div class="text-center p-6 bg-purple-50 dark:bg-purple-900/20 rounded-xl border border-purple-200 dark:border-purple-800">
+            <div class="text-3xl font-bold text-purple-600 dark:text-purple-400 mb-2">15+</div>
+            <div class="text-gray-600 dark:text-gray-300 font-medium">Industries</div>
+            <div class="text-sm text-gray-500 dark:text-gray-400">across job market analysis</div>
+          </div>
+          <div class="text-center p-6 bg-orange-50 dark:bg-orange-900/20 rounded-xl border border-orange-200 dark:border-orange-800">
+            <div class="text-3xl font-bold text-orange-600 dark:text-orange-400 mb-2">50+</div>
+            <div class="text-gray-600 dark:text-gray-300 font-medium">States/Regions</div>
+            <div class="text-sm text-gray-500 dark:text-gray-400">geographic coverage</div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Navigation -->
+      <div class="flex flex-col sm:flex-row justify-between items-center gap-4 pt-8 border-t border-gray-200 dark:border-gray-700">
+        <LinkButton href="/">
+          ← Back to Portfolio
+        </LinkButton>
+        <LinkButton href="https://github.com/HuyResearcher/Job_market">
+          View on GitHub →
+        </LinkButton>
+      </div>
+    </section>
+  </main>
+</Layout>

@@ -1,0 +1,52 @@
+version: '3.8'
+
+services:
+  ai-meeting-automation:
+    build: .
+    container_name: ai-meeting-automation
+    ports:
+      - "5678:5678"
+    environment:
+      - N8N_HOST=0.0.0.0
+      - N8N_PORT=5678
+      - PYTHONUNBUFFERED=1
+    volumes:
+      - ./data:/app/data
+      - ./logs:/app/logs
+      - ./.env:/app/.env
+      - ./credentials.json:/app/credentials.json
+    restart: unless-stopped
+    networks:
+      - automation-network
+
+  # Optional: Redis for n8n caching
+  redis:
+    image: redis:7-alpine
+    container_name: automation-redis
+    restart: unless-stopped
+    networks:
+      - automation-network
+    volumes:
+      - redis-data:/data
+
+  # Optional: PostgreSQL for n8n data persistence
+  postgres:
+    image: postgres:15-alpine
+    container_name: automation-postgres
+    environment:
+      POSTGRES_DB: n8n
+      POSTGRES_USER: n8n
+      POSTGRES_PASSWORD: n8n_password
+    volumes:
+      - postgres-data:/var/lib/postgresql/data
+    restart: unless-stopped
+    networks:
+      - automation-network
+
+networks:
+  automation-network:
+    driver: bridge
+
+volumes:
+  redis-data:
+  postgres-data:

@@ -13,6 +13,10 @@ import Jira from "./icons/Jira.astro"
 import Figma from "./icons/Figma.astro"
 import PowerBI from "./icons/PowerBI.astro"
 import DrawIO from "./icons/DrawIO.astro"
+import Python from "./icons/Python.astro"
+import SQL from "./icons/SQL.astro"
+import N8N from "./icons/N8N.astro"
+import HTML from "./icons/HTML.astro"
 
 const TAGS = {
   LINK: {
@@ -75,22 +79,58 @@ const TAGS = {
     class: "bg-gray-100 text-gray-700 dark:bg-blue-600 dark:text-white",
     icon: DrawIO,
   },
+  PYTHON: {
+    name: "Python",
+    class: "bg-gray-100 text-gray-700 dark:bg-blue-600 dark:text-white",
+    icon: Python,
+  },
+  SQL: {
+    name: "SQL",
+    class: "bg-gray-100 text-gray-700 dark:bg-blue-600 dark:text-white",
+    icon: SQL,
+  },
+  N8N: {
+    name: "n8n",
+    class: "bg-gray-100 text-gray-700 dark:bg-blue-600 dark:text-white",
+    icon: N8N,
+  },
+  HTML: {
+    name: "HTML",
+    class: "bg-gray-100 text-gray-700 dark:bg-blue-600 dark:text-white",
+    icon: HTML,
+  },
 }
+// Projects ordered by timeline (newest first)
 const PROJECTS = [
   {
-    title: "SAP - SD & Integration Suite",
+    title: "Job Market Analysis & Forecasting",
     description: [
-      { label: "Project timeline", value: "From September 2024 (in development)" },
-      { label: "Project overview", value: "SAP system at Orion Food Vina, one of the largest confectionery manufacturers in South Korea and Vietnam" },
-      { label: "Project team size", value: "SAP - 200, Portal Website - 50, Logistic System - 10, Invoice System - 10" },
-      { label: "Role", value: "Business Analyst in the Sales & Distribution (SD) division" },
-      { label: "Task", value: "Acting as a liaison and analyzing business processes, along with managing APIs between relevant systems, including the PDA for sales personnel, SAP SD, and the logistics system." }
+      { label: "Project timeline", value: "January 2025" },
+      { label: "Project overview", value: "Advanced analysis of 785K+ job postings from Hugging Face dataset with machine learning forecasting, salary analysis, and Power BI dashboard integration for comprehensive labor market insights" },
+      { label: "Project type", value: "Business Intelligence & ML Forecasting Project" },
+      { label: "Role", value: "Data Analyst & Machine Learning Developer" },
+      { label: "Key metrics", value: "785,640 job postings analyzed, $123,288 average salary insights, 6-month market forecasting, top job categories identification across 139,982 companies" }
     ],
-    projectPage: "/projects/sap",
-    link: "https://www.mk.co.kr/en/it/10963955",
-    github: "https://www.dmspro.vn/orion-khoi-dong-du-an-chuyen-doi-so-cung-dmspro-buoc-tien-chien-luoc-trong-hieu-qua-kinh-doanh#:~:text=DMSpro%20cung%20c%E1%BA%A5p%20m%E1%BB%96t%20gi%E1%BA%A3i,h%C6%A1n%20ngay%20t%E1%BA%A1i%20c%E1%BB%ADa%20h%C3%A0ng",
-    image: "/projects/SAP.png",
-    tags: [TAGS.SAP, TAGS.RESTFUL, TAGS.JIRA, TAGS.FIGMA, TAGS.DRAWIO],
+    projectPage: "/projects/job-market",
+    link: "https://github.com/HuyResearcher/Job_market",
+    github: "https://github.com/HuyResearcher/Job_market",
+    image: "/projects/Jobmk.webp",
+    tags: [TAGS.PYTHON, TAGS.POWERBI],
+  },
+  {
+    title: "AI Meeting Creation Automation",
+    description: [
+      { label: "Project timeline", value: "November 2024" },
+      { label: "Project overview", value: "Intelligent automation system using Gemini AI, n8n, and Python to automatically analyze emails and create Google Meet meetings with calendar integration" },
+      { label: "Project type", value: "Individual AI Automation Project" },
+      { label: "Role", value: "AI Automation Developer & Process Designer" },
+      { label: "Key technologies", value: "Gemini AI, n8n workflow automation, Google Calendar/Gmail APIs, Python, Docker deployment" }
+    ],
+    projectPage: "/projects/meeting-automation",
+    link: "https://github.com/HuyResearcher/meeting-creation-automation",
+    github: "https://github.com/HuyResearcher/meeting-creation-automation",
+    image: "/projects/AIMail.webp",
+    tags: [TAGS.N8N, TAGS.PYTHON],
   },
   {
     title: "MHM - Shop Heat Map",
@@ -102,23 +142,38 @@ const PROJECTS = [
       { label: "Task", value: "Analyze user requirement, data validation & cleaning, UI UX design." }
     ],
     projectPage: "/projects/heatmap",
-    link2: "https://mhm.orionvina.vn/login/index.html",
+    link: "https://mhm.orionvina.vn/login/index.html",
     image: "/projects/MHM.png",
     tags: [TAGS.JS, TAGS.MONGO, TAGS.POWERBI, TAGS.DRAWIO],
   },
   {
-    title: "DraEdu - EduTech System",
+    title: "SAP - SD & Integration Suite",
     description: [
-      { label: "Project timeline", value: "August 2023 - October 2023" },
-      { label: "Project overview", value: "An innovative EduTech system designed to enhance the learning experience for students and educators. The platform offers a variety of tools and resources for online learning, including interactive lessons, assessments, and progress tracking." },
-      { label: "Team size", value: "6" },
-      { label: "Role", value: "Business Analyst cum UI/UX Designer" },
-      { label: "Task", value: "Analyze user requirement, unit test, UI UX design." }
+      { label: "Project timeline", value: "September 2024 - Present" },
+      { label: "Project overview", value: "SAP system at Orion Food Vina, one of the largest confectionery manufacturers in South Korea and Vietnam" },
+      { label: "Project team size", value: "SAP - 200, Portal Website - 50, Logistic System - 10, Invoice System - 10" },
+      { label: "Role", value: "Business Analyst in the Sales & Distribution (SD) division" },
+      { label: "Task", value: "Acting as a liaison and analyzing business processes, along with managing APIs between relevant systems, including the PDA for sales personnel, SAP SD, and the logistics system." }
     ],
-    projectPage: "/projects/edutech",
-    link3: "https://draedu.vn/home",
-    image: "/projects/Draedu.png",
-    tags: [TAGS.FRAPPE, TAGS.FIGMA, TAGS.DRAWIO],
+    projectPage: "/projects/sap",
+    link: "https://www.dmspro.vn/orion-khoi-dong-du-an-chuyen-doi-so-cung-dmspro-buoc-tien-chien-luoc-trong-hieu-qua-kinh-doanh#:~:text=DMSpro%20cung%20c%E1%BA%A5p%20m%E1%BB%96t%20gi%E1%BA%A3i,h%C6%A1n%20ngay%20t%E1%BA%A1i%20c%E1%BB%ADa%20h%C3%A0ng",
+    image: "/projects/SAP.png",
+    tags: [TAGS.SAP, TAGS.RESTFUL, TAGS.JIRA, TAGS.FIGMA, TAGS.DRAWIO],
+  },
+  {
+    title: "Confectionery Sales Performance Analysis",
+    description: [
+      { label: "Project timeline", value: "August 2024" },
+      { label: "Project overview", value: "Comprehensive data analysis of Vietnamese confectionery brands (Orion Food Vina, Kido, Kinh Do) with 2010-2020 sales performance analytics using Python, SQL, and interactive visualizations" },
+      { label: "Project type", value: "Data Analytics & Business Intelligence Project" },
+      { label: "Role", value: "Data Analyst & Visualization Specialist" },
+      { label: "Key insights", value: "Market share analysis, revenue trends, seasonal patterns, competitive positioning, growth rate calculations with CAGR metrics" }
+    ],
+    projectPage: "/projects/confectionery-sales",
+    link: "https://github.com/HuyResearcher/Confectionery_Sales",
+    github: "https://github.com/HuyResearcher/Confectionery_Sales",
+    image: "/projects/VNConfectionery.webp",
+    tags: [TAGS.PYTHON, TAGS.SQL, TAGS.HTML],
   },
   {
     title: "Thai Son - Education Management",
@@ -130,17 +185,30 @@ const PROJECTS = [
       { label: "Task", value: "Project management, stakeholder coordination, business analysis, quality assurance." }
     ],
     projectPage: "/projects/thaison",
-    link4: "https://thaison.draerp.vn/#login",
+    link: "https://thaison.draerp.vn/#login",
     image: "/projects/Thaison.jpg",
     tags: [TAGS.FRAPPE, TAGS.FIGMA, TAGS.DRAWIO, TAGS.POWERBI],
   },
-
+  {
+    title: "DraEdu - EduTech System",
+    description: [
+      { label: "Project timeline", value: "August 2023 - October 2023" },
+      { label: "Project overview", value: "An innovative EduTech system designed to enhance the learning experience for students and educators. The platform offers a variety of tools and resources for online learning, including interactive lessons, assessments, and progress tracking." },
+      { label: "Team size", value: "6" },
+      { label: "Role", value: "Business Analyst cum UI/UX Designer" },
+      { label: "Task", value: "Analyze user requirement, unit test, UI UX design." }
+    ],
+    projectPage: "/projects/edutech",
+    link: "https://draedu.vn/home",
+    image: "/projects/Draedu.png",
+    tags: [TAGS.FRAPPE, TAGS.FIGMA, TAGS.DRAWIO],
+  },
 ]
 ---
 
 <div class="flex flex-col gap-y-16">
   {
-    PROJECTS.map(({ image, title, description, tags, projectPage, link, github, link2, link3, link4 }) => (
+    PROJECTS.map(({ image, title, description, tags, projectPage, link, github }) => (
     <article class="flex flex-col space-x-0 space-y-8 group md:flex-row md:space-x-8 md:space-y-0">
   
   <!-- Clickable image -->
@@ -186,33 +254,19 @@ const PROJECTS = [
       
       <footer class="flex items-end justify-start mt-4 gap-x-4">
           {github && (
-            <LinkButton href="https://www.mk.co.kr/en/it/10963955">
-              <Link class="size-4" />
-              Metanet Global
+            <LinkButton href={github}>
+              <GitHub class="size-4" />
+              {title === "SAP - SD & Integration Suite" ? "Github" : "Github"}
             </LinkButton>
           )}
           {link && (
-            <LinkButton href="https://www.dmspro.vn/orion-khoi-dong-du-an-chuyen-doi-so-cung-dmspro-buoc-tien-chien-luoc-trong-hieu-qua-kinh-doanh#:~:text=DMSpro%20cung%20c%E1%BA%A5p%20m%E1%BB%96t%20gi%E1%BA%A3i,h%C6%A1n%20ngay%20t%E1%BA%A1i%20c%E1%BB%ADa%20h%C3%A0ng.">
+            <LinkButton href={link}>
               <Link class="size-4" />
-              DMSPRO
-            </LinkButton>
-          )}
-          {link2 && (
-            <LinkButton href="https://mhm.orionvina.vn/login/index.html">
-              <Link class="size-4" />
-              MHM
-            </LinkButton>
-          )}
-          {link3 && (
-            <LinkButton href="https://draedu.vn/home">
-              <Link class="size-4" />
-              DraEdu
-            </LinkButton>
-          )}
-          {link4 && (
-            <LinkButton href="https://thaison.draerp.vn/#login">
-              <Link class="size-4" />
-              Thai Son
+              {title === "SAP - SD & Integration Suite" ? "DMSPro" : 
+               title === "MHM - Shop Heat Map" ? "MHM" :
+               title === "DraEdu - EduTech System" ? "DraEdu" :
+               title === "Thai Son - Education Management" ? "Thai Son" :
+               "Live Demo"}
             </LinkButton>
           )}
         </footer>

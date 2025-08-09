@@ -1,0 +1,319 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Confectionery Sales Analysis Report</title>
+    <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            margin: 0;
+            padding: 20px;
+            background-color: #f5f5f5;
+        }
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            background: white;
+            padding: 30px;
+            border-radius: 10px;
+            box-shadow: 0 0 20px rgba(0,0,0,0.1);
+        }
+        .header {
+            text-align: center;
+            border-bottom: 3px solid #2c5aa0;
+            padding-bottom: 20px;
+            margin-bottom: 30px;
+        }
+        .header h1 {
+            color: #2c5aa0;
+            margin: 0;
+            font-size: 2.5em;
+        }
+        .header h2 {
+            color: #666;
+            margin: 10px 0 0 0;
+            font-weight: normal;
+        }
+        .section {
+            margin: 30px 0;
+            padding: 20px;
+            border-left: 4px solid #2c5aa0;
+            background-color: #f9f9f9;
+        }
+        .section h3 {
+            color: #2c5aa0;
+            margin-top: 0;
+        }
+        .brand-card {
+            display: inline-block;
+            width: 300px;
+            margin: 15px;
+            padding: 20px;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            border-radius: 10px;
+            text-align: center;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+        }
+        .brand-card h4 {
+            margin: 0 0 10px 0;
+            font-size: 1.3em;
+        }
+        .brand-card p {
+            margin: 5px 0;
+            opacity: 0.9;
+        }
+        .metrics {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 20px;
+            margin: 20px 0;
+        }
+        .metric-card {
+            background: white;
+            padding: 20px;
+            border-radius: 8px;
+            text-align: center;
+            border: 1px solid #e0e0e0;
+        }
+        .metric-card h4 {
+            color: #2c5aa0;
+            margin: 0 0 10px 0;
+        }
+        .metric-value {
+            font-size: 2em;
+            font-weight: bold;
+            color: #333;
+        }
+        .file-list {
+            background: #f8f9fa;
+            border: 1px solid #e9ecef;
+            border-radius: 5px;
+            padding: 15px;
+            margin: 15px 0;
+        }
+        .file-list h4 {
+            margin-top: 0;
+            color: #495057;
+        }
+        .file-list ul {
+            margin: 0;
+            padding-left: 20px;
+        }
+        .file-list li {
+            margin: 5px 0;
+            color: #6c757d;
+        }
+        .analysis-flow {
+            display: flex;
+            justify-content: space-between;
+            flex-wrap: wrap;
+            margin: 20px 0;
+        }
+        .flow-step {
+            background: #e3f2fd;
+            border: 2px solid #2196f3;
+            border-radius: 10px;
+            padding: 15px;
+            margin: 10px;
+            flex: 1;
+            min-width: 200px;
+            text-align: center;
+        }
+        .flow-step h5 {
+            color: #1976d2;
+            margin: 0 0 10px 0;
+        }
+        .footer {
+            text-align: center;
+            margin-top: 40px;
+            padding-top: 20px;
+            border-top: 1px solid #eee;
+            color: #666;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <h1>Confectionery Sales Performance Analysis</h1>
+            <h2>Vietnamese Market Leaders: Orion Food Vina, Kido & Kinh Do (2010-2020)</h2>
+            <p><strong>Analysis Period:</strong> 2010-2020 | <strong>Generated:</strong> August 2025</p>
+        </div>
+
+        <div class="section">
+            <h3>🎯 Executive Summary</h3>
+            <p>This comprehensive analysis examines the sales performance of three major Vietnamese confectionery brands over an 11-year period. Using advanced data analysis techniques with Python and SQL, we've identified key trends, market dynamics, and competitive positioning in the Vietnamese confectionery market.</p>
+            
+            <div class="metrics">
+                <div class="metric-card">
+                    <h4>Total Sales Records</h4>
+                    <div class="metric-value">396K+</div>
+                </div>
+                <div class="metric-card">
+                    <h4>Analysis Period</h4>
+                    <div class="metric-value">11 Years</div>
+                </div>
+                <div class="metric-card">
+                    <h4>Brands Analyzed</h4>
+                    <div class="metric-value">3</div>
+                </div>
+                <div class="metric-card">
+                    <h4>Product Categories</h4>
+                    <div class="metric-value">6</div>
+                </div>
+            </div>
+        </div>
+
+        <div class="section">
+            <h3>🏢 Brands Under Analysis</h3>
+            
+            <div class="brand-card" style="background: linear-gradient(135deg, #ff6b6b 0%, #ee5a24 100%);">
+                <h4>Orion Food Vina</h4>
+                <p>Korean confectionery subsidiary</p>
+                <p>Est. 1999 | Ho Chi Minh City</p>
+                <p>Specializes in snacks & confectionery</p>
+            </div>
+
+            <div class="brand-card" style="background: linear-gradient(135deg, #4ecdc4 0%, #44a08d 100%);">
+                <h4>Kido</h4>
+                <p>Leading Vietnamese food company</p>
+                <p>Est. 1993 | Ho Chi Minh City</p>
+                <p>Known for cakes & candies</p>
+            </div>
+
+            <div class="brand-card" style="background: linear-gradient(135deg, #feca57 0%, #ff9ff3 100%);">
+                <h4>Kinh Do</h4>
+                <p>Premier Vietnamese confectionery</p>
+                <p>Est. 1993 | Ho Chi Minh City</p>
+                <p>Famous for moon cakes & traditional sweets</p>
+            </div>
+        </div>
+
+        <div class="section">
+            <h3>📊 Analysis Framework</h3>
+            <div class="analysis-flow">
+                <div class="flow-step">
+                    <h5>1. Data Collection</h5>
+                    <p>Sales transactions, market share data, product information</p>
+                </div>
+                <div class="flow-step">
+                    <h5>2. SQL Analysis</h5>
+                    <p>Revenue trends, growth calculations, market dynamics</p>
+                </div>
+                <div class="flow-step">
+                    <h5>3. Python Analytics</h5>
+                    <p>Statistical analysis, visualization, insights generation</p>
+                </div>
+                <div class="flow-step">
+                    <h5>4. Business Intelligence</h5>
+                    <p>Strategic recommendations, competitive positioning</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="section">
+            <h3>📁 Project Structure</h3>
+            
+            <div class="file-list">
+                <h4>📊 Data Files</h4>
+                <ul>
+                    <li>sales_data.csv - Complete sales transactions dataset</li>
+                    <li>market_share_data.csv - Brand market share over time</li>
+                    <li>confectionery_sales.db - SQLite database with all data</li>
+                </ul>
+            </div>
+
+            <div class="file-list">
+                <h4>🗄️ SQL Analysis</h4>
+                <ul>
+                    <li>create_tables.sql - Database schema creation</li>
+                    <li>analysis_queries.sql - Comprehensive analysis queries</li>
+                    <li>data_insertion.sql - Sample data insertion scripts</li>
+                </ul>
+            </div>
+
+            <div class="file-list">
+                <h4>🐍 Python Modules</h4>
+                <ul>
+                    <li>data_generator.py - Realistic sales data generation</li>
+                    <li>database_manager.py - Database operations & queries</li>
+                    <li>analysis_utils.py - Statistical analysis utilities</li>
+                    <li>visualization.py - Chart creation & dashboards</li>
+                </ul>
+            </div>
+
+            <div class="file-list">
+                <h4>📓 Jupyter Notebooks</h4>
+                <ul>
+                    <li>01_data_preparation.ipynb - Data setup & initial analysis</li>
+                    <li>02_exploratory_analysis.ipynb - Deep dive exploration</li>
+                    <li>03_sales_performance.ipynb - Performance metrics</li>
+                    <li>04_comparative_analysis.ipynb - Brand comparison</li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="section">
+            <h3>🔍 Key Analysis Areas</h3>
+            <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 20px;">
+                <div style="background: white; padding: 15px; border-radius: 8px; border-left: 4px solid #4CAF50;">
+                    <h4 style="color: #4CAF50; margin-top: 0;">📈 Revenue Trends</h4>
+                    <p>Year-over-year revenue analysis, growth patterns, and trend identification across all brands</p>
+                </div>
+                <div style="background: white; padding: 15px; border-radius: 8px; border-left: 4px solid #2196F3;">
+                    <h4 style="color: #2196F3; margin-top: 0;">🎯 Market Share</h4>
+                    <p>Competitive positioning, market concentration metrics, and share evolution over time</p>
+                </div>
+                <div style="background: white; padding: 15px; border-radius: 8px; border-left: 4px solid #FF9800;">
+                    <h4 style="color: #FF9800; margin-top: 0;">🌟 Seasonal Patterns</h4>
+                    <p>Quarterly performance analysis, seasonal indices, and peak period identification</p>
+                </div>
+                <div style="background: white; padding: 15px; border-radius: 8px; border-left: 4px solid #9C27B0;">
+                    <h4 style="color: #9C27B0; margin-top: 0;">📦 Product Performance</h4>
+                    <p>Individual product analysis, category performance, and portfolio optimization insights</p>
+                </div>
+                <div style="background: white; padding: 15px; border-radius: 8px; border-left: 4px solid #F44336;">
+                    <h4 style="color: #F44336; margin-top: 0;">🌍 Regional Analysis</h4>
+                    <p>Geographic performance patterns, regional market penetration, and distribution insights</p>
+                </div>
+                <div style="background: white; padding: 15px; border-radius: 8px; border-left: 4px solid #607D8B;">
+                    <h4 style="color: #607D8B; margin-top: 0;">💰 Profitability</h4>
+                    <p>Profit margin analysis, cost structure evaluation, and financial performance metrics</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="section">
+            <h3>🛠️ Technologies Used</h3>
+            <div style="display: flex; flex-wrap: wrap; gap: 15px; justify-content: center;">
+                <div style="background: #306998; color: white; padding: 10px 20px; border-radius: 25px;">🐍 Python</div>
+                <div style="background: #336791; color: white; padding: 10px 20px; border-radius: 25px;">🗄️ SQL/SQLite</div>
+                <div style="background: #150458; color: white; padding: 10px 20px; border-radius: 25px;">🐼 Pandas</div>
+                <div style="background: #013243; color: white; padding: 10px 20px; border-radius: 25px;">📊 NumPy</div>
+                <div style="background: #11557c; color: white; padding: 10px 20px; border-radius: 25px;">📈 Matplotlib</div>
+                <div style="background: #444876; color: white; padding: 10px 20px; border-radius: 25px;">🎨 Seaborn</div>
+                <div style="background: #3f4f75; color: white; padding: 10px 20px; border-radius: 25px;">📊 Plotly</div>
+                <div style="background: #f37626; color: white; padding: 10px 20px; border-radius: 25px;">📓 Jupyter</div>
+            </div>
+        </div>
+
+        <div class="section">
+            <h3>🚀 Getting Started</h3>
+            <ol style="font-size: 1.1em; line-height: 1.8;">
+                <li><strong>Install Requirements:</strong> Run <code>pip install -r requirements.txt</code></li>
+                <li><strong>Generate Data:</strong> Execute <code>python src/data_generator.py</code></li>
+                <li><strong>Run Analysis:</strong> Open and execute the Jupyter notebooks in sequence</li>
+                <li><strong>View Results:</strong> Check the generated charts and reports in the reports/ directory</li>
+            </ol>
+        </div>
+
+        <div class="footer">
+            <p><strong>Sales Performance Analysis Project</strong> | Generated with Python & SQL | Vietnamese Confectionery Market Research</p>
+            <p>© 2025 | Comprehensive Business Intelligence Analysis</p>
+        </div>
+    </div>
+</body>
+</html>
