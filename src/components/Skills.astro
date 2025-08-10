@@ -20,6 +20,7 @@ import AIAgentFlow from "./icons/AIAgentFlow.astro"
 import UML from "./icons/UML.astro"
 import Vietnam from "./icons/Vietnam.astro"
 import English from "./icons/English.astro"
+import Jira from "./icons/Jira.astro"
 
 const SKILLS = {
   "Business Analysis": [
@@ -32,6 +33,12 @@ const SKILLS = {
     { name: "SQL", icon: SQL, category: "Data Analysis" },
     { name: "Power BI", icon: PowerBI, category: "Data Analysis" },
     { name: "MongoDB", icon: Mongo, category: "Data Analysis" }
+  ],
+  "Project Management": [
+    { name: "Jira", icon: Jira, category: "Project Management" },
+    { name: "Agile", icon: AIPrompt, category: "Project Management" },
+    { name: "Risk & Change Management", icon: AIPrompt, category: "Project Management" },
+    { name: "Sprint Planning", icon: AIPrompt, category: "Project Management" }
   ],
   "Language": [
     { name: "English", icon: English, category: "Language" },
@@ -52,27 +59,36 @@ const ALL_SKILLS = Object.values(SKILLS).flat()
 
 <div class="skills-container">
   <!-- Filter Buttons -->
-  <div class="flex flex-wrap gap-4 mb-8 justify-center">
+  <div class="flex flex-wrap gap-3 mb-8 justify-center">
     <button 
-      class="filter-btn px-6 py-3 rounded-full bg-gradient-to-r from-gray-100 to-gray-200 dark:from-gray-700 dark:to-gray-600 text-gray-700 dark:text-gray-300 hover:from-gray-300 hover:to-gray-400 dark:hover:from-blue-500 dark:hover:to-purple-500 hover:text-gray-900 dark:hover:text-white transition-all duration-300 font-medium shadow-md hover:shadow-lg transform hover:scale-105"
+      class="filter-btn px-4 py-2 sm:px-6 sm:py-3 rounded-full bg-gradient-to-r from-gray-100 to-gray-200 dark:from-gray-700 dark:to-gray-600 text-gray-700 dark:text-gray-300 hover:from-gray-300 hover:to-gray-400 dark:hover:from-blue-500 dark:hover:to-purple-500 hover:text-gray-900 dark:hover:text-white transition-all duration-300 font-medium shadow-md hover:shadow-lg transform hover:scale-105 text-sm sm:text-base"
       data-filter="Business Analysis"
     >
-      📊 Business Analysis
+      <span class="hidden sm:inline">📊 Business Analysis</span>
+      <span class="sm:hidden">📊 Business</span>
     </button>
     <button 
-      class="filter-btn px-6 py-3 rounded-full bg-gradient-to-r from-gray-100 to-gray-200 dark:from-gray-700 dark:to-gray-600 text-gray-700 dark:text-gray-300 hover:from-gray-300 hover:to-gray-400 dark:hover:from-blue-500 dark:hover:to-purple-500 hover:text-gray-900 dark:hover:text-white transition-all duration-300 font-medium shadow-md hover:shadow-lg transform hover:scale-105"
+      class="filter-btn px-4 py-2 sm:px-6 sm:py-3 rounded-full bg-gradient-to-r from-gray-100 to-gray-200 dark:from-gray-700 dark:to-gray-600 text-gray-700 dark:text-gray-300 hover:from-gray-300 hover:to-gray-400 dark:hover:from-blue-500 dark:hover:to-purple-500 hover:text-gray-900 dark:hover:text-white transition-all duration-300 font-medium shadow-md hover:shadow-lg transform hover:scale-105 text-sm sm:text-base"
       data-filter="Data Analysis"
     >
-      📈 Data Analysis
+      <span class="hidden sm:inline">📈 Data Analysis</span>
+      <span class="sm:hidden">📈 Data</span>
     </button>
     <button 
-      class="filter-btn px-6 py-3 rounded-full bg-gradient-to-r from-gray-100 to-gray-200 dark:from-gray-700 dark:to-gray-600 text-gray-700 dark:text-gray-300 hover:from-gray-300 hover:to-gray-400 dark:hover:from-blue-500 dark:hover:to-purple-500 hover:text-gray-900 dark:hover:text-white transition-all duration-300 font-medium shadow-md hover:shadow-lg transform hover:scale-105"
+      class="filter-btn px-4 py-2 sm:px-6 sm:py-3 rounded-full bg-gradient-to-r from-gray-100 to-gray-200 dark:from-gray-700 dark:to-gray-600 text-gray-700 dark:text-gray-300 hover:from-gray-300 hover:to-gray-400 dark:hover:from-blue-500 dark:hover:to-purple-500 hover:text-gray-900 dark:hover:text-white transition-all duration-300 font-medium shadow-md hover:shadow-lg transform hover:scale-105 text-sm sm:text-base"
+      data-filter="Project Management"
+    >
+      <span class="hidden sm:inline">📅 Management</span>
+      <span class="sm:hidden">📅 Project</span>
+    </button>
+    <button 
+      class="filter-btn px-4 py-2 sm:px-6 sm:py-3 rounded-full bg-gradient-to-r from-gray-100 to-gray-200 dark:from-gray-700 dark:to-gray-600 text-gray-700 dark:text-gray-300 hover:from-gray-300 hover:to-gray-400 dark:hover:from-blue-500 dark:hover:to-purple-500 hover:text-gray-900 dark:hover:text-white transition-all duration-300 font-medium shadow-md hover:shadow-lg transform hover:scale-105 text-sm sm:text-base"
       data-filter="AI"
     >
       🤖 AI
     </button>
     <button 
-      class="filter-btn px-6 py-3 rounded-full bg-gradient-to-r from-gray-100 to-gray-200 dark:from-gray-700 dark:to-gray-600 text-gray-700 dark:text-gray-300 hover:from-gray-300 hover:to-gray-400 dark:hover:from-blue-500 dark:hover:to-purple-500 hover:text-gray-900 dark:hover:text-white transition-all duration-300 font-medium shadow-md hover:shadow-lg transform hover:scale-105"
+      class="filter-btn px-4 py-2 sm:px-6 sm:py-3 rounded-full bg-gradient-to-r from-gray-100 to-gray-200 dark:from-gray-700 dark:to-gray-600 text-gray-700 dark:text-gray-300 hover:from-gray-300 hover:to-gray-400 dark:hover:from-blue-500 dark:hover:to-purple-500 hover:text-gray-900 dark:hover:text-white transition-all duration-300 font-medium shadow-md hover:shadow-lg transform hover:scale-105 text-sm sm:text-base"
       data-filter="Language"
     >
       🌐 Language
@@ -84,14 +100,14 @@ const ALL_SKILLS = Object.values(SKILLS).flat()
     <div class="skills-flow flex gap-6 animate-scroll">
       {ALL_SKILLS.map((skill) => (
         <div class="skill-item flex items-center gap-3 px-6 py-3 bg-white dark:bg-gray-800 rounded-xl shadow-lg hover:shadow-xl border border-gray-200 dark:border-gray-700 whitespace-nowrap flex-shrink-0 transition-all duration-300 hover:scale-105" data-category={skill.category}>
-          <skill.icon class="size-8" />
+          <skill.icon class="skill-icon size-8" />
           <span class="text-base font-semibold text-gray-800 dark:text-gray-200">{skill.name}</span>
         </div>
       ))}
       {/* Duplicate for continuous scroll */}
       {ALL_SKILLS.map((skill) => (
         <div class="skill-item flex items-center gap-3 px-6 py-3 bg-white dark:bg-gray-800 rounded-xl shadow-lg hover:shadow-xl border border-gray-200 dark:border-gray-700 whitespace-nowrap flex-shrink-0 transition-all duration-300 hover:scale-105" data-category={skill.category}>
-          <skill.icon class="size-8" />
+          <skill.icon class="skill-icon size-8" />
           <span class="text-base font-semibold text-gray-800 dark:text-gray-200">{skill.name}</span>
         </div>
       ))}
@@ -200,6 +216,24 @@ const ALL_SKILLS = Object.values(SKILLS).flat()
 
   .skill-item:hover {
     transform: translateY(-2px);
+  }
+
+  /* Ensure all icons have consistent sizing */
+  .skill-icon img {
+    width: 2rem !important;
+    height: 2rem !important;
+    object-fit: contain;
+    display: inline-block;
+    vertical-align: middle;
+  }
+
+  .skill-icon {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 2rem;
+    height: 2rem;
+    flex-shrink: 0;
   }
 
 
